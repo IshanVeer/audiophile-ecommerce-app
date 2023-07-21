@@ -1,6 +1,6 @@
 .header{
     background-color: var(--colorGreyDark);
-    height: 65rem;
+    height: 60rem;
     
 }
 .hero{
@@ -26,6 +26,7 @@
 }
 .heroContentHeading{
     color: var(--colorWhite);
+    margin: 3rem 0;
 }
 .heroContentPara{
     color: #ffffffb3;
