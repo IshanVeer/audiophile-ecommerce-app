@@ -1,3 +1,46 @@
+
+@import url('../../app/customMediaQueries.css');
 .navigation{
-    background-color: black;
+    background-color: var(--colorGreyDark);
+    display: flex;
+    justify-content: space-between;
+    max-width: 111rem;
+    height: 5.8rem;
+    margin: 0 auto;
+    padding: 1.85rem 0;
+    align-items: center;
+    border-bottom: 1px solid #ffffff7d;
+}
+.navBarContainer{
+    background-color: var(--colorGreyDark);
+}
+/* logo */
+.logo{
+    width: 14.5rem;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    
+    
+}
+/* nav links */
+.categoryList{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    
+}
+.categoryListItem{
+    margin: 1rem;
+    padding: 0.5rem;
+}
+.categoryListItemLink{
+    text-decoration: none;
+    color: var(--colorWhite);
+    font-size: 1.3rem;
+    font-weight: bold;
+    transition: all 0.1s ease-in-out;
+}
+.categoryListItemLink:hover{
+    color: var(--primaryColor);
 }

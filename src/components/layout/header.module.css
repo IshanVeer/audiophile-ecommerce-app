@@ -1,0 +1,43 @@
+.header{
+    background-color: var(--colorGreyDark);
+    height: 60rem;
+    
+}
+.hero{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 111rem;
+    height: 100%;
+    margin: 0 auto;
+}
+/* Hero content */
+.heroContent{
+    max-width: 40%;
+}
+.heroContentOverline{
+    color: var(--colorGreyLight);
+    font-size: 1.4rem;
+    line-height: 1.9rem;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}
+.heroContentHeading{
+    color: var(--colorWhite);
+}
+.heroContentPara{
+    color: var(--colorWhite);
+    
+}
+
+/* hero Image */
+.heroImageContainer{
+    width: 60%;
+    height: 100%;
+}
+.heroImage{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
