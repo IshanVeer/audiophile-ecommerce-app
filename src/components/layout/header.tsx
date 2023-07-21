@@ -1,7 +1,7 @@
 import React from "react";
 import css from "./Header.module.css";
 import Image from "next/image";
-import heroImage from "../../assets/home/desktop/image-hero.jpg";
+import heroImage from "../../assets/home/desktop/image-hero.png";
 import Link from "next/link";
 
 export const Header = () => {
