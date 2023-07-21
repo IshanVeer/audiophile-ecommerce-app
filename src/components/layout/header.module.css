@@ -16,8 +16,10 @@
     max-width: 40%;
 }
 .heroContentOverline{
-    color: var(--colorGreyLight);
+    color: #fafafa75;
+
     font-size: 1.4rem;
+    font-weight: var(--fontWeightRegular);
     line-height: 1.9rem;
     letter-spacing: 10px;
     text-transform: uppercase;
@@ -26,7 +28,10 @@
     color: var(--colorWhite);
 }
 .heroContentPara{
-    color: var(--colorWhite);
+    color: #ffffffb3;
+    width: 35rem;
+    padding-bottom: 2rem;
+    
     
 }
 
@@ -42,5 +47,20 @@
     object-fit: cover;
     position: absolute;
     top: -70px;
+    right: 30px;
     
 }
+.productLink{
+    font-size: 1.3rem;
+    font-weight: var(--fontWeighMedium);
+    text-decoration: none;
+    color: var(--colorWhite);
+    padding: 1.2rem 2.6rem;
+    border-radius: 1px;
+    background-color: var(--primaryColor);
+    transition: all 0.1s ;
+}
+.productLink:hover{
+    background-color: var(--primaryColorLight);
+}
+
