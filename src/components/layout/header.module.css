@@ -1,3 +1,4 @@
+
 .header{
     background-color: var(--colorGreyDark);
     height: 60rem;
@@ -54,13 +55,15 @@
 }
 .productLink{
     font-size: 1.3rem;
-    font-weight: var(--fontWeighMedium);
+    font-weight: var(--fontWeightBold);
     text-decoration: none;
     color: var(--colorWhite);
     padding: 1.2rem 2.6rem;
     border-radius: 1px;
     background-color: var(--primaryColor);
     transition: all 0.1s ;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 .productLink:hover{
     background-color: var(--primaryColorLight);

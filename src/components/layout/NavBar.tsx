@@ -16,18 +16,18 @@ export const NavBar = () => {
           <Image src={logo} alt="logo" className={css.logo} />
         </Link>
         {/* category links */}
-        <ul className={css.categoryList}>
-          <li className={css.categoryListItem}>
-            <Link className={css.categoryListItemLink} href="/">HOME</Link>
+        <ul className={css.navList}>
+          <li className={css.navListItem}>
+            <Link className={css.navListItemLink} href="/">HOME</Link>
           </li>
-          <li className={css.categoryListItem}>
-            <Link className={css.categoryListItemLink} href="/headphones">HEADPHONES</Link>
+          <li className={css.navListItem}>
+            <Link className={css.navListItemLink} href="/headphones">HEADPHONES</Link>
           </li>
-          <li className={css.categoryListItem}>
-            <Link className={css.categoryListItemLink} href="/earphones">EARPHONES</Link>
+          <li className={css.navListItem}>
+            <Link className={css.navListItemLink} href="/earphones">EARPHONES</Link>
           </li>
-          <li className={css.categoryListItem}>
-            <Link className={css.categoryListItemLink} href="/speakers">SPEAKERS</Link>
+          <li className={css.navListItem}>
+            <Link className={css.navListItemLink} href="/speakers">SPEAKERS</Link>
           </li>
         </ul>
         <NavCartButton />

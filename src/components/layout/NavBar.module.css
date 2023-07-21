@@ -23,24 +23,24 @@
     
 }
 /* nav links */
-.categoryList{
+.navList{
     display: flex;
     justify-content: space-between;
     list-style: none;
     padding: 0;
     
 }
-.categoryListItem{
+.navListItem{
     margin: 1rem;
     padding: 0.5rem;
 }
-.categoryListItemLink{
+.navListItemLink{
     text-decoration: none;
     color: var(--colorWhite);
     font-size: 1.3rem;
     font-weight: bold;
     transition: all 0.1s ease-in-out;
 }
-.categoryListItemLink:hover{
+.navListItemLink:hover{
     color: var(--primaryColor);
 }
