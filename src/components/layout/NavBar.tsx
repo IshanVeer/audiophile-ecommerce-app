@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import logo from "../../assets/shared/desktop/logo.svg";
 import cart from "../../assets/shared/desktop/icon-cart.svg";
+import { NavCartButton } from "./NavCartButton";
 
 export const NavBar = () => {
   return (
@@ -29,7 +30,7 @@ export const NavBar = () => {
             <Link className={css.categoryListItemLink} href="/speakers">SPEAKERS</Link>
           </li>
         </ul>
-        <button>cart</button>
+        <NavCartButton />
       </nav>
       </div>
     </div>

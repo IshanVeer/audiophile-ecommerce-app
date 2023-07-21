@@ -46,8 +46,9 @@
     height: 100%;
     object-fit: cover;
     position: absolute;
-    top: -70px;
+    top: -40px;
     right: 30px;
+    
     
 }
 .productLink{
