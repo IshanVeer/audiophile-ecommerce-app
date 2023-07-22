@@ -1,6 +1,6 @@
 .categoriesContainer{
     max-width: 111rem;
-    margin: 15rem auto 0 auto;
+    margin: 20rem auto 0 auto;
     
 }
 .categoriesListHeading{
@@ -20,10 +20,45 @@
 .categoriesListItemLinkContainer{
     background-color: var(--colorGrey);
     width: 100%;
+    height: 20rem;
+    position: relative;
+    border-radius: 8px;
+}
+.categoriesListItemLinkContent{
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.categoriesListHeading{
+    font-weight: var(--fontWeightBold);
+}
+.categoriesListItemLink{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #959595;
+    font-weight: var(--fontWeightBold);
+    transition: all 0.1s ease-in-out;
+
+}
+.categoriesListItemLink:hover{
+    color: var(--primaryColor);
+}
+.categoriesListItemLinkIcon{
+    color: var(--primaryColor);
+    padding-left: 5px;
 }
 .categoriesListItemLinkImage{
     width: 100%;
     height: 100%;
+    position: absolute;
+    top: -50%;
+    right: 0;
+    object-fit: contain;
+    
    
     
 }

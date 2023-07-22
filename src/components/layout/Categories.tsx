@@ -2,10 +2,10 @@ import React from "react";
 import css from "./Categories.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import { BsChevronRight } from "react-icons/bs";
-import categoryPreviewHeadphones from "../../assets/product-xx99-mark-one-headphones/desktop/image-category-page-preview.jpg";
-import categoryPreviewSpeakers from "../../assets/product-zx9-speaker/desktop/image-category-page-preview.jpg";
-import categoryPreviewEarphones from "../../assets/product-yx1-earphones/desktop/image-category-page-preview.jpg";
+import { BiSolidChevronRight } from "react-icons/bi";
+import categoryPreviewHeadphones from "../../assets/product-xx99-mark-one-headphones/desktop/image-category-page-preview.png";
+import categoryPreviewSpeakers from "../../assets/product-zx9-speaker/desktop/image-category-page-preview.png";
+import categoryPreviewEarphones from "../../assets/product-yx1-earphones/desktop/image-category-page-preview.png";
 
 export const Categories = () => {
   return (
@@ -20,10 +20,12 @@ export const Categories = () => {
                 alt="headphones"
                 className={css.categoriesListItemLinkImage}
               />
-              <h6 className={css.categoriesListHeading}>Headphones</h6>
-              <Link href="/headphones" className={css.categoriesListItemLink}>
-                Shop <BsChevronRight />
-              </Link>
+              <div className={css.categoriesListItemLinkContent}>
+                <h6 className={css.categoriesListHeading}>Headphones</h6>
+                <Link href="/headphones" className={css.categoriesListItemLink}>
+                  Shop <BiSolidChevronRight className={css.categoriesListItemLinkIcon}/>
+                </Link>
+              </div>
             </div>
           </li>
           {/* list item 2 */}
@@ -31,13 +33,15 @@ export const Categories = () => {
             <div className={css.categoriesListItemLinkContainer}>
               <Image
                 src={categoryPreviewSpeakers}
-                alt="headphones"
+                alt="speakers"
                 className={css.categoriesListItemLinkImage}
               />
-              <h6 className={css.categoriesListHeading}>Speakers</h6>
-              <Link href="/headphones" className={css.categoriesListItemLink}>
-                Shop <BsChevronRight />
-              </Link>
+              <div className={css.categoriesListItemLinkContent}>
+                <h6 className={css.categoriesListHeading}>Speakers</h6>
+                <Link href="/speakers" className={css.categoriesListItemLink}>
+                  Shop <BiSolidChevronRight className={css.categoriesListItemLinkIcon}/>
+                </Link>
+              </div>
             </div>
           </li>
           {/* list item 3 */}
@@ -45,14 +49,16 @@ export const Categories = () => {
             <div className={css.categoriesListItemLinkContainer}>
               <Image
                 src={categoryPreviewEarphones}
-                alt="headphones"
+                alt="earphones"
                 className={css.categoriesListItemLinkImage}
               />
-              
-              <h6 className={css.categoriesListHeading}>Earphones</h6>
-              <Link href="/headphones" className={css.categoriesListItemLink}>
-                Shop <BsChevronRight />
-              </Link>
+
+              <div className={css.categoriesListItemLinkContent}>
+                <h6 className={css.categoriesListHeading}>Earphones</h6>
+                <Link href="/headphones" className={css.categoriesListItemLink}>
+                  Shop <BiSolidChevronRight className={css.categoriesListItemLinkIcon}/>
+                </Link>
+              </div>
             </div>
           </li>
         </ul>
