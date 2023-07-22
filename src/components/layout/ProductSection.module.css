@@ -1,0 +1,83 @@
+.productSectionContainer{
+    width: 111rem;
+    margin: 15rem auto 0 auto;
+    
+    
+}
+/* product 1 */
+.product1{
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    background-color: var(--primaryColor);
+    height: 56rem;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    
+}
+.productImageContainer{
+    width: 60%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    
+}
+.backdropOverlaySmall{
+    width: 450px;
+    height: 450px;
+    border: 1px solid var(--colorGrey);
+    border-radius: 50%;
+    opacity: 20%;
+    position: absolute;
+    top: 40%;
+    left: 15.4%;
+    z-index: 0;
+    
+}
+.backdropOverlayMedium{
+    width: 550px;
+    height: 550px;
+    border: 1px solid var(--colorGrey);
+    border-radius: 50%;
+    opacity: 20%;
+    position: absolute;
+    top: 31%;
+    left: 8%;
+    z-index: 0;
+
+}
+.backdropOverlayLarge{
+    width: 900px;
+    height:900px ;
+    border: 1px solid var(--colorGrey);
+    border-radius: 50%;
+    opacity: 20%;
+    position: absolute;
+    top: -4%;
+    left: -20%;
+    z-index: 0;
+}
+.productImage{
+    width: 36rem;
+    height: 42rem;
+    object-fit: cover;
+    position: absolute;
+    bottom: 0;
+    left: 150px;
+    z-index: 1;
+}
+
+.productTextContainer{
+    width: 30%;
+    z-index: 2;
+}
+.productHeading{
+    color: var(--colorWhite);
+    margin-bottom: 0;
+}
+.productPara{
+    color: var(--colorWhite);
+    margin-bottom: 3rem;
+    
+}

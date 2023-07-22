@@ -1,0 +1,38 @@
+.productLink{
+font-size: 1.3rem;
+font-weight: var(--fontWeightBold);
+text-decoration: none;
+
+padding: 1.2rem 2.6rem;
+border-radius: 1px;
+
+transition: all 0.1s ;
+text-transform: uppercase;
+letter-spacing: 1px;
+}
+.primary{
+    background-color: var(--primaryColor);
+    color: var(--colorWhite);
+}
+.primary:hover{
+    background-color: var(--primaryColorLight);
+}
+.dark{
+    background-color: var(--colorBlack);
+    color: var(--colorWhite);
+}
+.dark:hover{
+    background-color: transparent;
+    color: var(--colorBlack);
+    border: 1px solid var(--colorBlack);
+}
+.transparent{
+    background-color: transparent;
+    color: var(--colorBlack);
+    border: 1px solid var(--colorBlack);
+}
+.transparent:hover{
+    background-color: var(--colorBlack);
+    color: var(--colorWhite);
+}
+

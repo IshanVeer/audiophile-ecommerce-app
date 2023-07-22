@@ -1,5 +1,5 @@
 import React from "react";
-import css from "./Categories.module.css";
+import css from "./CategoriesSection.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import { BiSolidChevronRight } from "react-icons/bi";
@@ -7,10 +7,10 @@ import categoryPreviewHeadphones from "../../assets/product-xx99-mark-one-headph
 import categoryPreviewSpeakers from "../../assets/product-zx9-speaker/desktop/image-category-page-preview.png";
 import categoryPreviewEarphones from "../../assets/product-yx1-earphones/desktop/image-category-page-preview.png";
 
-export const Categories = () => {
+export const CategoriesSection = () => {
   return (
     <div>
-      <div className={css.categoriesContainer}>
+      <div className={css.categoriesSectionContainer}>
         <ul className={css.categoriesList}>
           {/* list item 1 */}
           <li className={css.categoriesListItem}>

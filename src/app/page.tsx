@@ -1,13 +1,15 @@
 
 import { Header } from "@/components/layout/Header";
 import styles from "./page.module.css";
-import { Categories } from "@/components/layout/Categories";
+import { CategoriesSection } from "@/components/layout/CategoriesSection";
+import { ProductSection } from "@/components/layout/ProductSection";
 
 export default function Home() {
   return (
     <div>
      <Header />
-     <Categories />
+     <CategoriesSection />
+     <ProductSection />
     </div>
   );
 }
