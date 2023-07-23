@@ -8,7 +8,7 @@
 .product1{
     display: flex;
     align-items: center;
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
     background-color: var(--primaryColor);
     height: 56rem;
     width: 100%;
@@ -80,4 +80,72 @@
     color: var(--colorWhite);
     margin-bottom: 3rem;
     
+}
+/* Product 2 */
+.product2{
+    display: flex;
+    align-items: center;
+    margin-bottom: 5rem;
+    background: linear-gradient(145deg, rgba(150, 150, 150, 0.3), rgba(16, 16, 16, 0.4)); 
+    height: 32rem;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+    
+}
+.product2ImageContainer{
+    width: 60%;
+    height: 100%;
+    
+    z-index: 0;
+    
+}
+.product2Image{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    right: 0;
+    top: 0;
+    
+}
+.product2TextContainer{
+    width: 40%;
+    position: absolute;
+    left: 70px;
+    z-index: 2;
+}
+/* Product 3 */
+.product3{
+    display: flex;
+    justify-content: space-between;
+    column-gap: 20px;
+    align-items: center;
+    height: 32rem;
+}
+.product3ImageContainer{
+    height: 100%;
+    width: 50%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.product3Image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+    
+}
+.product3TextContainer{
+    width: 50%;
+    height: 100%;
+    background-color: var(--colorGrey);
+    border-radius: 10px;
+    position: relative;
+}
+.viewportWrapper{
+    position: absolute;
+    top: 50%;
+    transform: translate(40%, -50%);
 }
