@@ -1,0 +1,25 @@
+.aboutSectionContainer{
+    width: 111rem;
+    margin: 20rem auto;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+.aboutSectionTextBox{
+    width: 42rem;
+    
+    
+}
+
+.aboutSectionImage{
+    object-fit: cover;
+    width: 100%;
+    border-radius: 10px;
+    
+}
+.wordEmphasize{
+    color: var(--primaryColor);
+}
+.aboutPara{
+    color: #7b7b7b;
+}

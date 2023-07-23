@@ -12,9 +12,9 @@
 
   --colorWhite: #FFFFFF;
   --colorGreyLight:#FAFAFA;
-  --colorGrey:#F1F1F1;
-  --colorGreyDark:#101010;
-  --colorBlack: #000000;
+  --colorGrey:#f1f1f1;
+  --colorGreyDark:rgb(16, 16, 16);
+  --colorBlack: rgb(0, 0, 0);
 
   /* ================ Font ================ */
   --fontFamily: 'Manrope', sans-serif;

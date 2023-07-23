@@ -38,7 +38,7 @@
     text-decoration: none;
     color: var(--colorWhite);
     font-size: 1.3rem;
-    font-weight: bold;
+    font-weight: var(--fontWeightBold);
     transition: all 0.1s ease-in-out;
 }
 .navListItemLink:hover{
