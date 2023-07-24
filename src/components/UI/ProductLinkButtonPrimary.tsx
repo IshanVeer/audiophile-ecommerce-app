@@ -5,9 +5,11 @@ import Link from "next/link";
 interface Props {
   path: string;
   type: string;
+  name: string;
+
 }
 
-export const ProductLinkButtonPrimary = ({ path, type }: Props) => {
+export const ProductLinkButtonPrimary = ({ path, type, name }: Props) => {
   const productLinkTypeClass =
     type === "primary"
       ? css.primary
@@ -18,7 +20,7 @@ export const ProductLinkButtonPrimary = ({ path, type }: Props) => {
       : css.primary;
   return (
     <Link href={path} className={`${css.productLink} ${productLinkTypeClass}`}>
-      See product
+      {name}
     </Link>
   );
 };

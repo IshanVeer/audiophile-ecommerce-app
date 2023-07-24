@@ -18,7 +18,7 @@ export const Header = () => {
               Experience natural, life like audio and exceptional build quality
               made for the passionate music enthusiast.
             </p>
-            <ProductLinkButtonPrimary path="/" type="primary"/>
+            <ProductLinkButtonPrimary path="/" type="primary" name="See Product"/>
           </div>
           <div className={css.heroImageContainer}>
             <Image src={heroImage} alt="hero" className={css.heroImage} />
