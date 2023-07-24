@@ -2,11 +2,9 @@ import React from "react";
 import css from "./Header.module.css";
 import Image from "next/image";
 import heroImage from "../../assets/home/desktop/image-hero.png";
-import Link from "next/link";
-import  {ProductLinkButtonPrimary}  from "../UI/ProductLinkButtonPrimary";
+import  ProductLinkButtonPrimary  from "../UI/ProductLinkButtonPrimary";
 
-
-export const Header = () => {
+const Header = () => {
   return (
     <div>
       <header className={css.header}>
@@ -18,7 +16,11 @@ export const Header = () => {
               Experience natural, life like audio and exceptional build quality
               made for the passionate music enthusiast.
             </p>
-            <ProductLinkButtonPrimary path="/" type="primary" name="See Product"/>
+            <ProductLinkButtonPrimary
+              path="/"
+              type="primary"
+              name="See Product"
+            />
           </div>
           <div className={css.heroImageContainer}>
             <Image src={heroImage} alt="hero" className={css.heroImage} />
@@ -28,3 +30,5 @@ export const Header = () => {
     </div>
   );
 };
+
+export default Header;

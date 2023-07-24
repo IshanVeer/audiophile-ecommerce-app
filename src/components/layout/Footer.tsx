@@ -9,7 +9,7 @@ import {
   AiOutlineTwitter,
 } from "react-icons/ai";
 
-export const Footer = () => {
+const Footer = () => {
   return (
     <div>
       <footer className={css.footer}>
@@ -57,7 +57,7 @@ export const Footer = () => {
             <ul className={css.footerSocialLinks}>
               <li className={css.socialLinkItem}>
                 <a href="https://www.facebook.com/" className={css.link}>
-                  <AiFillFacebook /> 
+                  <AiFillFacebook />
                 </a>
               </li>
               <li className={css.socialLinkItem}>
@@ -77,3 +77,5 @@ export const Footer = () => {
     </div>
   );
 };
+
+export default Footer;

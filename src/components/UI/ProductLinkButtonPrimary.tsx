@@ -9,7 +9,7 @@ interface Props {
 
 }
 
-export const ProductLinkButtonPrimary = ({ path, type, name }: Props) => {
+const ProductLinkButtonPrimary = ({ path, type, name }: Props) => {
   const productLinkTypeClass =
     type === "primary"
       ? css.primary
@@ -24,3 +24,5 @@ export const ProductLinkButtonPrimary = ({ path, type, name }: Props) => {
     </Link>
   );
 };
+export default ProductLinkButtonPrimary;
+
