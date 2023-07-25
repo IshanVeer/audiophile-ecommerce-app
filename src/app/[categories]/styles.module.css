@@ -1,0 +1,15 @@
+.headingContainer{
+    background-color: var(--colorGreyDark);
+    margin: 0 auto;
+    
+}
+.heading{
+    color: var(--colorWhite);
+    margin: 0;
+    padding: 10rem 0;
+    max-width: 111rem;
+    margin: 0 auto;
+    text-align: center;
+
+    
+}

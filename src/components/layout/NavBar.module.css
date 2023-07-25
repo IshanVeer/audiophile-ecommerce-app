@@ -28,11 +28,13 @@
     justify-content: space-between;
     list-style: none;
     padding: 0;
+   gap: 4rem;
+   margin-right: 12rem;
     
 }
 .navListItem{
-    margin: 1rem;
-    padding: 0.5rem;
+    margin: 0;
+    padding: 0;
 }
 .navListItemLink{
     text-decoration: none;
