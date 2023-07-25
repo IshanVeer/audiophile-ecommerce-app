@@ -2,12 +2,9 @@
 
 import React from "react";
 import css from "./styles.module.css";
+import ProductList from "@/components/product/ProductList";
 
-interface Props {
-  params: {
-    categories: string;
-  };
-}
+
 const DUMMY_DATA = [
   {
     id: 1,
@@ -584,6 +581,14 @@ const DUMMY_DATA = [
     ],
   },
 ];
+interface Props {
+    params: {
+      categories: string;
+    };
+  }
+  
+
+  
 
 const CategoriesPage = ({ params }: Props) => {
   return (
@@ -591,7 +596,7 @@ const CategoriesPage = ({ params }: Props) => {
       <div className={css.headingContainer}>
         <h2 className={css.heading}>{params.categories}</h2>
       </div>
-      <div></div>
+      <ProductList products={DUMMY_DATA}/>
     </div>
   );
 };
