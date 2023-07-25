@@ -591,6 +591,7 @@ const CategoriesPage = ({ params }: Props) => {
       <div className={css.headingContainer}>
         <h2 className={css.heading}>{params.categories}</h2>
       </div>
+      <div></div>
     </div>
   );
 };
