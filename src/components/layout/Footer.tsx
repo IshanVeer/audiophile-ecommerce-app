@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import css from "./Footer.module.css";
 import logo from "@/assets/shared/desktop/logo.svg";
@@ -8,8 +9,10 @@ import {
   AiOutlineInstagram,
   AiOutlineTwitter,
 } from "react-icons/ai";
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
+  const currentPathname = usePathname();
   return (
     <div>
       <footer className={css.footer}>
@@ -33,22 +36,22 @@ const Footer = () => {
             {/* footer nav list */}
             <ul className={css.footerNavList}>
               <li className={css.footerNavListItem}>
-                <Link className={css.footerNavListItemLink} href="/">
+                <Link className={currentPathname === '/' ? css.footerNavListItemLinkActive : css.footerNavListItemLink} href="/">
                   HOME
                 </Link>
               </li>
               <li className={css.footerNavListItem}>
-                <Link className={css.footerNavListItemLink} href="/headphones">
+                <Link className={currentPathname === '/headphones' ? css.footerNavListItemLinkActive : css.footerNavListItemLink}  href="/headphones">
                   HEADPHONES
                 </Link>
               </li>
               <li className={css.footerNavListItem}>
-                <Link className={css.footerNavListItemLink} href="/earphones">
+                <Link className={currentPathname === '/earphones' ? css.footerNavListItemLinkActive : css.footerNavListItemLink}  href="/earphones">
                   EARPHONES
                 </Link>
               </li>
               <li className={css.footerNavListItem}>
-                <Link className={css.footerNavListItemLink} href="/speakers">
+                <Link className={currentPathname === '/speakers' ? css.footerNavListItemLinkActive : css.footerNavListItemLink}  href="/speakers">
                   SPEAKERS
                 </Link>
               </li>
