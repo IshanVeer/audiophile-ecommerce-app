@@ -12,7 +12,7 @@ interface includeItems{
     item: string;
 }
 interface Product {
-    id: number;
+    _id: number;
     name: string;
     category: string;
     new: boolean;
@@ -39,10 +39,10 @@ interface Product {
     };
 }
 
-const ProductList: React.FC<{ products: Product[] }> = ({ products }) => {
+
+const ProductList: React.FC<{ products: Product[] }> =  ({products}) => {
   const params = useParams();
-  console.log(params.categories, "params");
-  console.log(products, "products");
+  console.log(products, 'products array');
 
   return (
     <div>
@@ -53,7 +53,7 @@ const ProductList: React.FC<{ products: Product[] }> = ({ products }) => {
             .map(
               (product) =>
                 product.category === params.categories && (
-                  <li className={css.productListItem} key={product.id}>
+                  <li className={css.productListItem} key={product._id}>
                     <div className={css.productImageContainer}>
                       <Image
                         className={css.productImage}
