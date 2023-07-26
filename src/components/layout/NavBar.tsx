@@ -1,38 +1,46 @@
+'use client'
 import React from "react";
 import css from "./NavBar.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../../assets/shared/desktop/logo.svg";
 import  NavCartButton  from "./NavCartButton";
+import {usePathname} from "next/navigation";
+
 
 const NavBar = () => {
+  const currentPathname = usePathname();
+  
+  
+
+  
   return (
     <div>
       <div className={css.navBarContainer}>
         <nav className={css.navigation}>
-          <Link href="/">
+          <Link  href="/">
             {/* logo */}
             <Image src={logo} alt="logo" className={css.logo} />
           </Link>
           {/* category links */}
           <ul className={css.navList}>
             <li className={css.navListItem}>
-              <Link className={css.navListItemLink} href="/">
+              <Link className={currentPathname === '/' ? css.navListItemLinkActive : css.navListItemLink}  href="/">
                 HOME
               </Link>
             </li>
             <li className={css.navListItem}>
-              <Link className={css.navListItemLink} href="/headphones">
+              <Link className={currentPathname === '/headphones' ? css.navListItemLinkActive : css.navListItemLink} href="/headphones">
                 HEADPHONES
               </Link>
             </li>
             <li className={css.navListItem}>
-              <Link className={css.navListItemLink} href="/earphones">
+              <Link className={currentPathname === '/earphones' ? css.navListItemLinkActive : css.navListItemLink} href="/earphones">
                 EARPHONES
               </Link>
             </li>
             <li className={css.navListItem}>
-              <Link className={css.navListItemLink} href="/speakers">
+              <Link className={currentPathname === '/speakers' ? css.navListItemLinkActive : css.navListItemLink} href="/speakers">
                 SPEAKERS
               </Link>
             </li>

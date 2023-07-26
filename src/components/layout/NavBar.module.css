@@ -43,6 +43,13 @@
     font-weight: var(--fontWeightBold);
     transition: all 0.1s ease-in-out;
 }
+
 .navListItemLink:hover{
     color: var(--primaryColor);
+}
+.navListItemLinkActive{
+    text-decoration: none;
+    color: var(--primaryColor);
+    font-size: 1.3rem;
+    font-weight: var(--fontWeightBold);
 }
