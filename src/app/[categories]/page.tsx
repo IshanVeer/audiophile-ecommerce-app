@@ -3,6 +3,8 @@
 import React from "react";
 import css from "./styles.module.css";
 import ProductList from "@/components/product/ProductList";
+import CategoriesSection from "@/components/layout/CategoriesSection";
+import AboutSection from "@/components/layout/AboutSection";
 
 
 const DUMMY_DATA = [
@@ -597,6 +599,8 @@ const CategoriesPage = ({ params }: Props) => {
         <h2 className={css.heading}>{params.categories}</h2>
       </div>
       <ProductList products={DUMMY_DATA}/>
+      <CategoriesSection />
+      <AboutSection />
     </div>
   );
 };
