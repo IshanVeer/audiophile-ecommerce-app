@@ -14,6 +14,7 @@ interface includeItems{
 interface Product {
     _id: number;
     name: string;
+    slug: string;
     category: string;
     new: boolean;
     price: number;
@@ -70,7 +71,7 @@ const ProductList: React.FC<{ products: Product[] }> =  ({products}) => {
                         {product.description}
                       </p>
                       <ProductLinkButtonPrimary
-                        path="/"
+                        path={`/${product.category}/${product.slug}`}
                         type="primary"
                         name="See Product"
                       />

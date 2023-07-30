@@ -8,7 +8,7 @@ import NavCartButton from "./NavCartButton";
 import { usePathname } from "next/navigation";
 
 interface productProps {
-  _id: number;
+  
   category: string;
 }
 
