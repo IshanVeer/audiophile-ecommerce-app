@@ -24,6 +24,7 @@ export default async function CategoriesPage( {params}: Props) {
   
   const products = await getProducts();
   const productsArray = products.products;
+  console.log(productsArray, 'products array');
 
  
   return (

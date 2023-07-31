@@ -2,9 +2,9 @@
 import React from 'react';
 import css from "./ProductSection.module.css";
 import Image from "next/image";
-import productImage1 from "@/assets/home/desktop/image-speaker-zx9.png";
-import productImage2 from "@/assets/home/desktop/image-speaker-zx7.png";
-import productImage3 from "@/assets/home/desktop/image-earphones-yx1.jpg";
+import productImage1 from "../../../public/assets/home/desktop/image-speaker-zx9.png";
+import productImage2 from "../../../public/assets/home/desktop/image-speaker-zx7.png";
+import productImage3 from "../../../public/assets/home/desktop/image-earphones-yx1.jpg";
 
 import  ProductLinkButtonPrimary  from "../UI/ProductLinkButtonPrimary";
 

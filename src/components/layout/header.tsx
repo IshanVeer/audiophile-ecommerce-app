@@ -1,7 +1,7 @@
 import React from "react";
 import css from "./Header.module.css";
 import Image from "next/image";
-import heroImage from "../../assets/home/desktop/image-hero.png";
+import heroImage from "../../../public/assets/home/desktop/image-hero.png";
 import  ProductLinkButtonPrimary  from "../UI/ProductLinkButtonPrimary";
 
 const Header = () => {

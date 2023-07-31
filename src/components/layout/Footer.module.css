@@ -61,6 +61,7 @@
     font-size: 1.3rem;
     font-weight: var(--fontWeightBold);
     transition: all 0.1s ease-in-out;
+    text-transform: uppercase;
 }
 .footerNavListItemLink:hover{
     color: var(--primaryColor);
@@ -70,6 +71,7 @@
     color: var(--primaryColor);
     font-size: 1.3rem;
     font-weight: var(--fontWeightBold);
+    text-transform: uppercase;
 }
 /* Footer social links */
 .footerSocialLinks{

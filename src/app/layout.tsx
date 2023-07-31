@@ -33,7 +33,7 @@ export default async function RootLayout({
       <body >
         <NavBar products={productsArray}/>
         {children}
-       <Footer />
+       <Footer products={productsArray}/>
         </body>
     </html>
   )

@@ -3,7 +3,7 @@
 import React from "react";
 import css from "./ProductList.module.css";
 import Image from "next/image";
-import headphoneImage from "../../assets/product-xx99-mark-one-headphones/desktop/image-product.jpg";
+// import headphoneImage from "../../../public/assets/product-xx99-mark-one-headphones/desktop/image-product.jpg";
 import ProductLinkButtonPrimary from "../UI/ProductLinkButtonPrimary";
 import { useParams } from "next/navigation";
 
@@ -18,6 +18,11 @@ interface Product {
     category: string;
     new: boolean;
     price: number;
+    image: {
+        mobile: string;
+        tablet: string;
+        desktop: string;
+    };
     description: string;
     features: string;
     includes: includeItems[];
@@ -43,7 +48,7 @@ interface Product {
 
 const ProductList: React.FC<{ products: Product[] }> =  ({products}) => {
   const params = useParams();
-  console.log(products, 'products array');
+  
 
   return (
     <div>
@@ -58,8 +63,10 @@ const ProductList: React.FC<{ products: Product[] }> =  ({products}) => {
                     <div className={css.productImageContainer}>
                       <Image
                         className={css.productImage}
-                        src={headphoneImage}
+                        src={product.image.desktop}
                         alt={product.name}
+                        width={2000}
+                        height={2000}
                       />
                     </div>
                     <div className={css.productTextContainer}>

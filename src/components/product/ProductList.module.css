@@ -12,8 +12,9 @@
 .productListItem{
     list-style: none;
     display: flex;
+    
     align-items: center;
-    gap: 18rem;
+    gap: 15rem;
     margin-bottom: 16rem;
 }
 .productListItem:last-child{
@@ -23,7 +24,7 @@
     flex-direction: row-reverse;
 }
 .productImageContainer{
-    width: 50%;
+    
     height: 100%;
     flex: 1;
     
@@ -36,7 +37,7 @@
     border-radius: 7px;
 }
 .productTextContainer{
-    width: 50%;
+   width: 40rem;
     flex: 1;
     
 }
@@ -51,8 +52,10 @@
 }
 .productHeading{
     margin: 0;
+    width: 40rem;
 }
 .productDescription{
     margin-bottom: 5rem;
     margin-top: 3rem;
+    width: 45rem;
 }

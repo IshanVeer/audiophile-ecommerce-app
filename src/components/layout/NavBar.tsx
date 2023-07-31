@@ -3,7 +3,7 @@ import React from "react";
 import css from "./NavBar.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "../../assets/shared/desktop/logo.svg";
+import logo from "../../../public/assets/shared/desktop/logo.svg";
 import NavCartButton from "./NavCartButton";
 import { usePathname } from "next/navigation";
 

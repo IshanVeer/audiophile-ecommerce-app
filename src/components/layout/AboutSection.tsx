@@ -2,7 +2,7 @@
 import React from 'react';
 import css from "./AboutSection.module.css";
 import Image from "next/image";
-import aboutImage from "@/assets/shared/desktop/image-best-gear.jpg";
+import aboutImage from "../../../public/assets/shared/desktop/image-best-gear.jpg";
 
 const AboutSection = () => {
   return (

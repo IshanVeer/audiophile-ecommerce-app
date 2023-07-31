@@ -1,7 +1,7 @@
 'use client'
 import React from "react";
 import css from "./Footer.module.css";
-import logo from "@/assets/shared/desktop/logo.svg";
+import logo from "../../../public/assets/shared/desktop/logo.svg";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -11,8 +11,17 @@ import {
 } from "react-icons/ai";
 import { usePathname } from "next/navigation";
 
-const Footer = () => {
+
+interface productProps {
+  
+  category: string;
+}
+
+const Footer: React.FC<{products: productProps[]}> = ({products}) => {
   const currentPathname = usePathname();
+  const uniqueCategories = Array.from(
+    new Set(products.map((product) => product.category))
+  );
   return (
     <div>
       <footer className={css.footer}>
@@ -40,21 +49,20 @@ const Footer = () => {
                   HOME
                 </Link>
               </li>
-              <li className={css.footerNavListItem}>
-                <Link className={currentPathname === '/headphones' ? css.footerNavListItemLinkActive : css.footerNavListItemLink}  href="/headphones">
-                  HEADPHONES
+              {uniqueCategories.map((category) => (
+              <li className={css.navListItem} key={category}>
+                <Link
+                  className={
+                    currentPathname === `/${category}`
+                      ? css.footerNavListItemLinkActive
+                      : css.footerNavListItemLink
+                  }
+                  href={`/${category}`}
+                >
+                  {category}
                 </Link>
               </li>
-              <li className={css.footerNavListItem}>
-                <Link className={currentPathname === '/earphones' ? css.footerNavListItemLinkActive : css.footerNavListItemLink}  href="/earphones">
-                  EARPHONES
-                </Link>
-              </li>
-              <li className={css.footerNavListItem}>
-                <Link className={currentPathname === '/speakers' ? css.footerNavListItemLinkActive : css.footerNavListItemLink}  href="/speakers">
-                  SPEAKERS
-                </Link>
-              </li>
+            ))}
             </ul>
             {/* Social link icons */}
             <ul className={css.footerSocialLinks}>
