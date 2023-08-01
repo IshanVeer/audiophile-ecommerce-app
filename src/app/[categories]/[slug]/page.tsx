@@ -1,22 +1,27 @@
 
 
+import ManageProduct from '@/components/UI/ManageProduct';
+import ProductDetail from '@/components/product/ProductDetail';
 import React from 'react';
-interface Props {
-  params: {
-    slug: string;
-  };
-}
+
 export async function getStaticParams(){
   const res = await fetch("http://localhost:3000/api/products",{ next: { revalidate: 60 } });
   const products = await res.json();
+  return products;
+
   
 
 }
 
-const ProductItemPage = ({params}:Props) => {
+export default async function ProductItemPage(){
+  const products = await getStaticParams();
+  const productsArray = products.products;
+  console.log(productsArray, 'products array');
   return (
-    <div><h1 style={{"color":"black"}}>{params.slug}</h1></div>
+    <div>
+      <ProductDetail products={productsArray}/>
+      
+    </div>
   )
 }
 
-export default ProductItemPage

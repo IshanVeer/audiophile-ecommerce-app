@@ -1,0 +1,16 @@
+.manageProductActionsButton{
+    border: none;
+    background-color: transparent;
+    color: #979797;
+}
+.manageProductsContainer{
+    background-color: var(--colorGrey);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 12rem;
+    height: 4.8rem;
+}
+.quantity{
+    font-weight: var(--fontWeightBold);
+}

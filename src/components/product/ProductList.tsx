@@ -6,47 +6,12 @@ import Image from "next/image";
 // import headphoneImage from "../../../public/assets/product-xx99-mark-one-headphones/desktop/image-product.jpg";
 import ProductLinkButtonPrimary from "../UI/ProductLinkButtonPrimary";
 import { useParams } from "next/navigation";
-
-interface includeItems{
-    quantity: number;
-    item: string;
-}
-interface Product {
-    _id: number;
-    name: string;
-    slug: string;
-    category: string;
-    new: boolean;
-    price: number;
-    image: {
-        mobile: string;
-        tablet: string;
-        desktop: string;
-    };
-    description: string;
-    features: string;
-    includes: includeItems[];
-    gallery: {
-        first: {
-        mobile: string;
-        tablet: string;
-        desktop: string;
-        };
-        second: {
-        mobile: string;
-        tablet: string;
-        desktop: string;
-        };
-        third: {
-        mobile: string;
-        tablet: string;
-        desktop: string;
-        };
-    };
-}
+import { ProductProps } from "@/types/types";
 
 
-const ProductList: React.FC<{ products: Product[] }> =  ({products}) => {
+
+
+const ProductList: React.FC<{ products: ProductProps[] }> =  ({products}) => {
   const params = useParams();
   
 

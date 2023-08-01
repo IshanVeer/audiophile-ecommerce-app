@@ -13,7 +13,7 @@ interface Props {
   };
 }
 
-export async function getProducts(){
+export async function getStaticParams(){
   const res = await fetch("http://localhost:3000/api/products",{ next: { revalidate: 60 } });
   const products = await res.json();
   return products;
@@ -22,9 +22,11 @@ export async function getProducts(){
 
 export default async function CategoriesPage( {params}: Props) {
   
-  const products = await getProducts();
+  const products = await getStaticParams();
   const productsArray = products.products;
-  console.log(productsArray, 'products array');
+  
+ 
+ 
 
  
   return (
