@@ -1,0 +1,40 @@
+.productDetailContainer{
+    max-width: 111rem;
+    margin: 0 auto;
+}
+/* Main layout */
+.productMainLayout{
+    display: flex;
+    align-items: center;
+    margin: 16rem 0;
+    gap: 12.5rem;
+}
+.productTimeOverline{
+    font-size: 1.4rem;
+    color: var(--primaryColor);
+    font-weight: var(--fontWeightRegular);
+    line-height: 1.9rem;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+.productName{
+    margin: 0;
+    width: 40rem;
+}
+.productDetailDescription{
+    margin-bottom: 5rem;
+    margin-top: 3rem;
+    width: 45rem;
+}
+.productPrice{
+    font-size: 1.8rem;
+    font-weight: var(--fontWeightBold);
+    
+
+}
+.productDetailButtonContainer{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 5rem;
+}

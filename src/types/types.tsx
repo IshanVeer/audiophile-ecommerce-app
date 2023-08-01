@@ -4,15 +4,15 @@ export interface includeItems{
 }
 export interface ProductProps {
     _id: number;
-    name: string;
+    name: string | undefined;
     slug: string;
     category: string;
     new: boolean;
     price: number;
     image: {
-        mobile: string;
-        tablet: string;
-        desktop: string;
+        mobile: string | undefined;
+        tablet: string | undefined;
+        desktop: string | undefined;
     };
     description: string;
     features: string;
@@ -34,4 +34,5 @@ export interface ProductProps {
         desktop: string;
         };
     };
+    
 }
