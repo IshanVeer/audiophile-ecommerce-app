@@ -2,6 +2,16 @@ export interface includeItems{
     quantity: number;
     item: string;
 }
+export interface othersImage{
+    mobile: string;
+    tablet: string;
+    desktop: string;
+}
+export interface othersProps{
+    name: string;
+    slug: string;
+    image: othersImage;
+}
 export interface ProductProps {
     _id: number;
     name: string | undefined;
@@ -34,6 +44,7 @@ export interface ProductProps {
         desktop: string;
         };
     };
+    others: othersProps[];
     
 }
 export interface ButtonProp {

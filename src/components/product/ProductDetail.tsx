@@ -6,12 +6,14 @@ import { useParams } from "next/navigation";
 import Image from "next/image";
 import ManageProduct from "../UI/ManageProduct";
 import FunctionalButton from "../UI/FunctionalButton";
+import ProductLinkButtonPrimary from "../UI/ProductLinkButtonPrimary";
 
 const ProductDetail: React.FC<{ products: ProductProps[] }> = ({
   products,
 }) => {
   const params = useParams();
   const product = products.find((product) => product.slug === params.slug);
+  console.log(product);
   return (
     <div>
       <div className={css.productDetailContainer}>
@@ -64,21 +66,21 @@ const ProductDetail: React.FC<{ products: ProductProps[] }> = ({
         {/* Gallery */}
         <div className={css.productGallery}>
           <div className={css.productGalleryLeft}>
-          <Image
-            src={product?.gallery.first.desktop}
-            className={css.productGalleryImageLeft}
-            alt={product?.name}
-            width={445}
-            height={500}
-          />
+            <Image
+              src={product?.gallery.first.desktop}
+              className={css.productGalleryImageLeft}
+              alt={product?.name}
+              width={445}
+              height={500}
+            />
 
-          <Image
-            src={product?.gallery.second.desktop}
-            className={css.productGalleryImageLeft}
-            alt={product?.name}
-            width={445}
-            height={500}
-          />
+            <Image
+              src={product?.gallery.second.desktop}
+              className={css.productGalleryImageLeft}
+              alt={product?.name}
+              width={445}
+              height={500}
+            />
           </div>
 
           <Image
@@ -88,6 +90,29 @@ const ProductDetail: React.FC<{ products: ProductProps[] }> = ({
             width={500}
             height={500}
           />
+        </div>
+        {/* You may like section */}
+        <div className={css.referalProductContainer}>
+          <h3>You may like</h3>
+          <ul className={css.referalProductList}>
+            {product.others.map((item) => (
+              <li className={css.referalProductListItem} key={item.name}>
+                <Image
+                  src={item.image.desktop}
+                  className={css.referalProductImage}
+                  alt={item.image}
+                  width={500}
+                  height={500}
+                />
+                <h5>{item.name}</h5>
+                <ProductLinkButtonPrimary
+                  name="See Product"
+                  type="primary"
+                  path={`/${product?.category}/${item.slug}`}
+                />
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>

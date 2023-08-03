@@ -99,11 +99,28 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 6px;
 }
 .productGalleryImageRight{
     width: 100%;
     height: 59.2rem;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 6px;
+}
+/* you may like it section */
+.referalProductContainer{
+    text-align: center;
+    margin-top: 16rem;
+}
+.referalProductList{
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 12.5rem;
+    padding: 0;
+    list-style: none;
+
+}
+.referalProductImage{
+    width: 100%;
+    height: auto;
 }
