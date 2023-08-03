@@ -1,0 +1,14 @@
+.button{
+    border: none;
+    outline: none;
+    padding: 1.6rem 4rem;
+    background-color: var(--primaryColor);
+    color: var(--colorGreyLight);
+    transition: all 0.1s ease-in-out;
+    font-weight: var(--fontWeightBold);
+    font-family: var(--fontFamily);
+}
+.button:hover{
+    cursor: pointer;
+    background-color: var(--primaryColorLight);
+}

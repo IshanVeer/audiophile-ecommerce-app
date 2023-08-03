@@ -36,3 +36,6 @@ export interface ProductProps {
     };
     
 }
+export interface ButtonProp {
+    name: string;
+}
