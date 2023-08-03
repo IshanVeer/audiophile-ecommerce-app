@@ -114,8 +114,8 @@
 }
 .referalProductList{
     display: flex;
-    gap: 3rem;
-    margin-bottom: 12.5rem;
+    gap: 2.5rem;
+    margin-bottom: 25rem;
     padding: 0;
     list-style: none;
 
@@ -123,4 +123,5 @@
 .referalProductImage{
     width: 100%;
     height: auto;
+    border-radius: 7px;
 }

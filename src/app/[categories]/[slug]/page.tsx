@@ -1,6 +1,8 @@
 
 
 import ManageProduct from '@/components/UI/ManageProduct';
+import AboutSection from '@/components/layout/AboutSection';
+import CategoriesSection from '@/components/layout/CategoriesSection';
 import ProductDetail from '@/components/product/ProductDetail';
 import React from 'react';
 
@@ -20,6 +22,8 @@ export default async function ProductItemPage(){
   return (
     <div>
       <ProductDetail products={productsArray}/>
+      <CategoriesSection />
+      <AboutSection />  
       
     </div>
   )
