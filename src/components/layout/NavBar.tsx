@@ -1,11 +1,12 @@
 "use client";
-import React from "react";
+import React,{use, useState} from "react";
 import css from "./NavBar.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../../../public/assets/shared/desktop/logo.svg";
 import NavCartButton from "./NavCartButton";
 import { usePathname } from "next/navigation";
+import Cart from "../cart/Cart";
 
 interface productProps {
   
@@ -13,8 +14,18 @@ interface productProps {
 }
 
 const NavBar: React.FC<{ products: productProps[] }> = ({ products }) => {
-  const currentPathname = usePathname();
 
+  const [cartIsShown, setCartIsShown] =useState(false);
+
+  const showCartHandler = () => {
+    setCartIsShown(true);
+  };
+  const hideCartHandler = () => {
+    setCartIsShown(false);
+  };
+
+
+  const currentPathname = usePathname();
   // so that there is no repetetion of categories in the navbar
   // products.map((product) => product.category) returns an array of categories
   // new Set() returns an object with unique categories
@@ -61,9 +72,10 @@ const NavBar: React.FC<{ products: productProps[] }> = ({ products }) => {
               </li>
             ))}
           </ul>
-          <NavCartButton />
+          <NavCartButton onShow={showCartHandler}/>
         </nav>
       </div>
+      {cartIsShown && <Cart onHide={hideCartHandler}/>}
     </div>
   );
 };

@@ -1,10 +1,15 @@
-import React from 'react';
-import css from './Cart.module.css';
+import React, { Fragment } from "react";
+import css from "./Cart.module.css";
 
-export const Cart = () => {
+const Cart = ({ onHide }) => {
   return (
-    <div>
-      cart
-    </div>
-  )
-}
+    <Fragment>
+      <div className={css.backdrop} onClick={onHide}></div>
+      <div className={css.cartModal} onClick={onHide}>
+        <div className={css.cartContent}>cart</div>
+      </div>
+    </Fragment>
+  );
+};
+
+export default Cart;

@@ -3,9 +3,9 @@ import React from 'react';
 import { CartIcon } from '../cart/CartIcon';
 import css from "./NavCartButton.module.css";
 
-const NavCartButton = () => {
+const NavCartButton = ({onShow}) => {
   return (
-    <button className={css.cartButton}>
+    <button onClick={onShow} className={css.cartButton}>
         <CartIcon />
     </button>
   )
