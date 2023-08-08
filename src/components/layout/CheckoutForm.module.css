@@ -1,0 +1,67 @@
+
+.form{
+    max-width: 73rem;
+    margin: 15rem 0 15rem 10rem;
+    padding: 5rem 5rem;
+    border-radius: 10px;
+    background-color: var(--colorWhite);
+}
+.formSection{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 1.5rem;
+    column-gap: 2rem;
+}
+.checkoutFormSubHeading{
+    font-size: 1.3rem;
+    font-weight: var(--fontWeightBold);
+    margin-bottom: 1rem;
+    color: var(--primaryColor);
+    text-transform: uppercase;
+}
+.fullWidthInput{
+    grid-column: 1 / span 2;
+}
+.checkoutFormLabel{
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: var(--fontWeightBold);
+}
+.checkoutFormInput{
+    width: 100%;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    outline: none;
+    border: 1px solid #ccc;
+    background-color: white;
+    font-family: inherit;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.checkoutFormInput:hover{
+cursor: pointer;
+}
+.checkoutFormInput:focus{
+    border: 1px solid var(--primaryColor);
+}
+.checkoutFormInput::placeholder{
+    color: #ccc;
+    font-size: 1.4rem;
+    font-weight: var(--fontWeightBold);
+}
+.paymentLabelInputContainer{
+    border: 1px solid #ccc;
+    padding: 1.2rem;
+    border-radius: 5px;
+    accent-color: var(--primaryColor);
+}
+
+
+
+
+
+
+
+
+

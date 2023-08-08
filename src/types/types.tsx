@@ -50,3 +50,11 @@ export interface ProductProps {
 export interface ButtonProp {
     name: string;
 }
+export interface formInputProps{
+    label : string;
+    input:{
+        id: string;
+        type: string;
+        
+    }
+}

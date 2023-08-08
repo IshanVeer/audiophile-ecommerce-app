@@ -1,7 +1,9 @@
+import CheckoutForm from "@/components/layout/CheckoutForm";
+
 const CheckoutPage = () => {
   return (
     <div>
-      <h1>Checkout Page</h1>
+      <CheckoutForm />
     </div>
   );
 };
