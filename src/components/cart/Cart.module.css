@@ -19,3 +19,56 @@
     z-index: 30;
     animation: slide-down 300ms ease-out forwards;
   }
+  .cartContent{
+    padding: 0 3rem;
+    margin: 3rem 0;
+  }
+  .cartHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3rem 0;
+  }
+  .cartHeading{
+    margin: 0;
+  }
+  .removeAllButton{
+    
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    color: #acacac;
+    font-size: 1.5rem;
+    text-decoration: underline;
+    font-weight: var(--fontWeightMedium);
+    transition: all 0.1s ease-in-out;
+  }
+  .removeAllButton:hover{
+    color: var(--primaryColor);
+    
+  }
+  .cartProductList{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .cartProductListItem{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  .manageProducts{
+    width: 9.6rem;
+  }
+  .cartTotalPrice{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  .priceTitle{
+    font-weight: var(--fontWeightBold);
+    color: #acacac;
+  }

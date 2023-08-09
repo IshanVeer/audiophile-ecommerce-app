@@ -43,6 +43,7 @@
     display: flex;
     gap: 1rem;
     margin-bottom: 5rem;
+    width: 70%;
 }
 /* Product Features Layout */
 .productFeaturesLayout{
@@ -124,4 +125,11 @@
     width: 100%;
     height: auto;
     border-radius: 7px;
+}
+.addRemoveButton{
+    width: 40%;
+    
+}
+.addToCartButton{
+    width:60%
 }

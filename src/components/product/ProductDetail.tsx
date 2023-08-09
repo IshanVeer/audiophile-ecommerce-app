@@ -38,8 +38,12 @@ const ProductDetail: React.FC<{ products: ProductProps[] }> = ({
             </p>
             <p className={css.productPrice}>{`$${product?.price}`}</p>
             <div className={css.productDetailButtonContainer}>
-              <ManageProduct />
-              <FunctionalButton name="Add to cart" />
+              <div className={css.addRemoveButton}>
+                <ManageProduct />
+              </div>
+              <div className={css.addToCartButton}>
+                <FunctionalButton name="Add to cart" />
+              </div>
             </div>
           </div>
         </div>

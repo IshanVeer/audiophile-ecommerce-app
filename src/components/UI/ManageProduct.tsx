@@ -1,9 +1,9 @@
-import React from "react";
+import React,{Fragment} from "react";
 import css from "./ManageProduct.module.css";
 
 const ManageProduct = () => {
   return (
-    <div>
+    <Fragment>
         <div className={css.manageProductsContainer}>
       <span>
         <button className={css.manageProductActionsButton}>-</button>
@@ -13,7 +13,7 @@ const ManageProduct = () => {
         <button className={css.manageProductActionsButton}>+</button>
       </span>
       </div>
-    </div>
+    </Fragment>
   );
 };
 
