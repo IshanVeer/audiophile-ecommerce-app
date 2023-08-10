@@ -58,3 +58,8 @@ export interface formInputProps{
         
     }
 }
+export interface cartState{
+    products: ProductProps[];
+    totalQuantity: number;
+    totalPrice: number;
+}

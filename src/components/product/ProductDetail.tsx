@@ -3,8 +3,10 @@ import React from "react";
 import css from "./ProductDetail.module.css";
 import { ProductProps } from "@/types/types";
 import { useParams } from "next/navigation";
+import { useAppDispatch } from "@/hooks/hooks";
+import { cartActions } from "@/store/cart-slice";
 import Image from "next/image";
-import ManageProduct from "../UI/ManageProduct";
+
 import FunctionalButton from "../UI/FunctionalButton";
 import ProductLinkButtonPrimary from "../UI/ProductLinkButtonPrimary";
 
@@ -14,6 +16,12 @@ const ProductDetail: React.FC<{ products: ProductProps[] }> = ({
   const params = useParams();
   const product = products.find((product) => product.slug === params.slug);
   console.log(product);
+  const dispatch = useAppDispatch();
+
+
+  const addtoCartHandler = () => {
+    dispatch(cartActions.addProductToCart(product));
+  };
   return (
     <div>
       <div className={css.productDetailContainer}>
@@ -38,11 +46,11 @@ const ProductDetail: React.FC<{ products: ProductProps[] }> = ({
             </p>
             <p className={css.productPrice}>{`$${product?.price}`}</p>
             <div className={css.productDetailButtonContainer}>
-              <div className={css.addRemoveButton}>
-                <ManageProduct />
-              </div>
               <div className={css.addToCartButton}>
-                <FunctionalButton name="Add to cart" />
+                <FunctionalButton
+                  name="Add to cart"
+                  onClick={addtoCartHandler}
+                />
               </div>
             </div>
           </div>

@@ -19,9 +19,11 @@ const NavBar: React.FC<{ products: productProps[] }> = ({ products }) => {
 
   const showCartHandler = () => {
     setCartIsShown(true);
+    document.body.style.overflow = 'hidden';
   };
   const hideCartHandler = () => {
     setCartIsShown(false);
+    document.body.style.overflow = 'auto';
   };
 
 

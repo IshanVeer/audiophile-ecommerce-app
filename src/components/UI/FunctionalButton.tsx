@@ -3,10 +3,10 @@ import React,{Fragment} from 'react';
 import css from './FunctionalButton.module.css';
 
 
-const FunctionalButton:React.FC<{name:string}> = ({name}) => {
+const FunctionalButton:React.FC<{name:string}> = ({name, onClick}) => {
   return (
     <Fragment>
-        <button className={css.button}>
+        <button className={css.button} onClick={onClick}>
             {name}
         </button>
     </Fragment>
