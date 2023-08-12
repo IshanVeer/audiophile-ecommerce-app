@@ -33,6 +33,29 @@
   .cartHeading{
     margin: 0;
   }
+  
+  .cartProdutInfoContainer{
+    display: flex;
+    column-gap: 2rem;
+    align-items: center;
+  }
+  .cartProductImage{
+    width:8rem;
+    height: 8rem;
+    border-radius: 8px;
+  }
+  .cartProductName{
+    font-weight: var(--fontWeightBold);
+    color: var(--colorGreyDark);
+    margin: 0;
+  }
+  .cartProductPrice{
+    font-weight: var(--fontWeightBold);
+    font-size: 1.4rem;
+    color: #a6a6a6;
+    margin: 0;
+  }
+  
   .removeAllButton{
     
     border: none;
@@ -77,5 +100,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
+  }
+  .priceAmount{
+    margin: 0;
   }
