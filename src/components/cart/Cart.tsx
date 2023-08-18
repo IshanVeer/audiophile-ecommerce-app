@@ -2,8 +2,9 @@ import React, { Fragment } from "react";
 import { useAppSelector } from "@/hooks/hooks";
 import css from "./Cart.module.css";
 import FunctionalButton from "../UI/FunctionalButton";
-import ManageProduct from "../UI/ManageProduct";
-import Image from "next/image";
+
+
+import CartProduct from "./CartProduct";
 
 const Cart = ({ onHide }) => {
   const cartProducts = useAppSelector((state) => state.cart.products);
@@ -12,7 +13,7 @@ const Cart = ({ onHide }) => {
   return (
     <Fragment>
       <div className={css.backdrop} onClick={onHide}></div>
-      <div className={css.cartModal} onClick={onHide}>
+      <div className={css.cartModal} >
         <div className={css.cartContent}>
           <div className={css.cartHeader}>
             <h6 className={css.cartHeading}>
@@ -23,29 +24,7 @@ const Cart = ({ onHide }) => {
           <div className={css.cartProducts}>
             <ul className={css.cartProductList}>
               {cartProducts.map((product) => (
-                <li key={product.id}>
-                  <div className={css.productListItem}>
-                    <div className={css.cartProdutInfoContainer}>
-                      <Image
-                        src={product.image.desktop}
-                        alt={product.title}
-                        className={css.cartProductImage}
-                        width={100}
-                        height={100}
-                      />
-                      <div className={css.cartProductInfo}>
-                        <p className={css.cartProductName}>
-                          {product.name.substring(0, 4)}
-                        </p>
-                        <p className={css.cartProductPrice}>${product.price}</p>
-                      </div>
-                    </div>
-
-                    <div className={css.manageProducts}>
-                      <ManageProduct />
-                    </div>
-                  </div>
-                </li>
+                <CartProduct key={product.id} product={product} />
               ))}
             </ul>
           </div>
