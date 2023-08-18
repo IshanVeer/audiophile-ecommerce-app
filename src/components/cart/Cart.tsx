@@ -10,6 +10,9 @@ const Cart = ({ onHide }) => {
   const cartProducts = useAppSelector((state) => state.cart.products);
   const cartQuantity = useAppSelector((state) => state.cart.totalQuantity);
   const cartTotalPrice = useAppSelector((state) => state.cart.totalPrice);
+
+  console.log(cartProducts, "cart.js");
+
   return (
     <Fragment>
       <div className={css.backdrop} onClick={onHide}></div>
@@ -24,7 +27,7 @@ const Cart = ({ onHide }) => {
           <div className={css.cartProducts}>
             <ul className={css.cartProductList}>
               {cartProducts.map((product) => (
-                <CartProduct key={product.id} product={product} />
+                <CartProduct key={product._id} product={product} />
               ))}
             </ul>
           </div>

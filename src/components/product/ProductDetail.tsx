@@ -112,7 +112,7 @@ const ProductDetail: React.FC<{ products: ProductProps[] }> = ({
                 <Image
                   src={item.image.desktop}
                   className={css.referalProductImage}
-                  alt={item.image}
+                  alt={item.name}
                   width={500}
                   height={500}
                 />
