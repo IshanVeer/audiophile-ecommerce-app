@@ -31,14 +31,14 @@ const ProductSection = () => {
               Upgrade to premium speakers that are phenomenally built to deliver
               truly remarkable sound.
             </p>
-            <ProductLinkButtonPrimary path="/" type="dark" name="See Product"/>
+            <ProductLinkButtonPrimary path="/" type="dark" name="See Product" width="half"/>
           </div>
         </div>
         {/* Product 2 */}
         <div className={css.product2}>
           <div className={css.product2TextContainer}>
             <h4 className={css.product2Heading}>ZX9 SPEAKER</h4>
-            <ProductLinkButtonPrimary path="/" type="transparent" name="See Product"/>
+            <ProductLinkButtonPrimary path="/" type="transparent" name="See Product" width="half"/>
           </div>
           <div className={css.product2ImageContainer}>
             <Image
@@ -60,7 +60,7 @@ const ProductSection = () => {
           <div className={css.product3TextContainer}>
             <div className={css.viewportWrapper}>
               <h4 className={css.product3Heading}>ZX9 SPEAKER</h4>
-              <ProductLinkButtonPrimary path="/" type="transparent" name="See Product"/>
+              <ProductLinkButtonPrimary path="/" type="transparent" name="See Product" width="half"/>
             </div>
           </div>
         </div>

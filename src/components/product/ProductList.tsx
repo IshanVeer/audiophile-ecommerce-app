@@ -43,6 +43,7 @@ const ProductList: React.FC<{ products: ProductProps[] }> =  ({products}) => {
                         path={`/${product.category}/${product.slug}`}
                         type="primary"
                         name="See Product"
+                        width="half"
                       />
                     </div>
                   </li>

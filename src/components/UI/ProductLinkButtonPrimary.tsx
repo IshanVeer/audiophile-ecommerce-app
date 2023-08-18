@@ -7,9 +7,14 @@ interface Props {
   type: string;
   name: string;
 
+  width: string;
+  onClick?: () => void;
+
 }
 
-const ProductLinkButtonPrimary = ({ path, type, name }: Props) => {
+const ProductLinkButtonPrimary = ({ path, type, name, width, onClick }: Props) => {
+
+  const linkWidthClass = width === "full" ? css.full : css.half;
   const productLinkTypeClass =
     type === "primary"
       ? css.primary
@@ -18,8 +23,10 @@ const ProductLinkButtonPrimary = ({ path, type, name }: Props) => {
       : type === "transparent"
       ? css.transparent
       : css.primary;
+
+
   return (
-    <Link href={path} className={`${css.productLink} ${productLinkTypeClass}`}>
+    <Link href={path} className={`${css.productLink} ${productLinkTypeClass} ${linkWidthClass}`} onClick={onClick}>
       {name}
     </Link>
   );

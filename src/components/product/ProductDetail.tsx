@@ -121,6 +121,7 @@ const ProductDetail: React.FC<{ products: ProductProps[] }> = ({
                   name="See Product"
                   type="primary"
                   path={`/${product?.category}/${item.slug}`}
+                  width="half"
                 />
               </li>
             ))}

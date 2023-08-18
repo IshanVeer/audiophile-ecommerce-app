@@ -20,6 +20,7 @@ const Header = () => {
               path="/"
               type="primary"
               name="See Product"
+              width="half"
             />
           </div>
           <div className={css.heroImageContainer}>

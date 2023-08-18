@@ -35,4 +35,12 @@ letter-spacing: 1px;
     background-color: var(--colorBlack);
     color: var(--colorWhite);
 }
+.full{
+    width: -webkit-fill-available;
+    display: inline-block;
+    text-align: center;
+}
+.half{
+    display: inline;
+}
 

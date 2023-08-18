@@ -10,7 +10,7 @@
   }
   .cartModal{
     position: fixed;
-    top: 23vh;
+    top: 15vh;
     left: 62%;
     width: 25%;
     background-color: white;
@@ -76,4 +76,17 @@
 
   .priceAmount{
     margin: 0;
+  }
+  .emptyCart {
+    text-align: center;
+    font-size: 2rem;
+  }
+  .emptyCartImage {
+    object-fit: cover;
+    margin-bottom: 0;
+  }
+  .emptyCartMessage {
+    margin-top: -3rem;
+    color: rgb(147, 147, 147);
+    font-weight: 600;
   }

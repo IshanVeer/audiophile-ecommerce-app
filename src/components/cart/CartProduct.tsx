@@ -15,7 +15,7 @@ const CartProduct = ({ product }) => {
 
   console.log(product, "cart items");
   return (
-    <li key={product.id}>
+    <li key={product._id}>
       
       <div className={css.productListItem}>
         
