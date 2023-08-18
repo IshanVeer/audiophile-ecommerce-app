@@ -6,6 +6,7 @@ import Image from "next/image";
 import logo from "../../../public/assets/shared/desktop/logo.svg";
 import NavCartButton from "./NavCartButton";
 import { usePathname } from "next/navigation";
+
 import Cart from "../cart/Cart";
 
 interface productProps {
@@ -16,6 +17,7 @@ interface productProps {
 const NavBar: React.FC<{ products: productProps[] }> = ({ products }) => {
 
   const [cartIsShown, setCartIsShown] =useState(false);
+  
 
   const showCartHandler = () => {
     setCartIsShown(true);
@@ -58,6 +60,7 @@ const NavBar: React.FC<{ products: productProps[] }> = ({ products }) => {
                 HOME
               </Link>
             </li>
+            
 
             {uniqueCategories.map((category) => (
               <li className={css.navListItem} key={category}>
@@ -76,6 +79,7 @@ const NavBar: React.FC<{ products: productProps[] }> = ({ products }) => {
           </ul>
           <NavCartButton onShow={showCartHandler}/>
         </nav>
+        
       </div>
       {cartIsShown && <Cart onHide={hideCartHandler}/>}
     </div>

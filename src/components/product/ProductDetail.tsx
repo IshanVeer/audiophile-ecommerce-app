@@ -22,6 +22,7 @@ const ProductDetail: React.FC<{ products: ProductProps[] }> = ({
   const addtoCartHandler = () => {
     dispatch(cartActions.addProductToCart(product));
   };
+  
   return (
     <div>
       <div className={css.productDetailContainer}>

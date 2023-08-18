@@ -6,6 +6,9 @@
     background-color: var(--colorWhite);
     padding: 3rem;
 }
+.summaryHeading{
+    margin-top: 0;
+}
 .checkoutSummaryItems{
     list-style: none;
     padding: 0;
@@ -14,5 +17,25 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+.summaryProductList{
+    list-style: none;
+    padding: 0;
+}
+.summaryTag{
+    font-weight: var(--fontWeightBold);
+    color: #979797;
+    
+}
+.summaryValue{
+    font-weight: var(--fontWeightBold);
+    color: var(--colorGreyDark);
+    font-size: 1.8rem;
+}
+.grandTotalValue{
+    color: var(--primaryColor);
+}
+.grandTotal{
+    margin-bottom: 3.5rem;
 }

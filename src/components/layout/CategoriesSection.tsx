@@ -2,6 +2,7 @@ import React from "react";
 import css from "./CategoriesSection.module.css";
 import Link from "next/link";
 import Image from "next/image";
+
 import { BiSolidChevronRight } from "react-icons/bi";
 import categoryPreviewHeadphones from "../../../public/assets/product-xx99-mark-one-headphones/desktop/image-category-page-preview.png";
 import categoryPreviewSpeakers from "../../../public/assets/product-zx9-speaker/desktop/image-category-page-preview.png";
@@ -10,6 +11,7 @@ import categoryPreviewEarphones from "../../../public/assets/product-yx1-earphon
 
 
 const CategoriesSection = () => {
+  
   return (
     <div>
       <div className={css.categoriesSectionContainer}>

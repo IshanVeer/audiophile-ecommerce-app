@@ -1,35 +1,46 @@
+"use client";
 import React, { Fragment } from "react";
+import { useAppSelector } from "@/hooks/hooks";
 import css from "./CheckoutSummary.module.css";
+import CheckoutSummaryProducts from "./CheckoutSummaryProducts";
+
 import FunctionalButton from "../UI/FunctionalButton";
 
 const CheckoutSummary = () => {
+  const summaryProducts = useAppSelector((state) => state.cart.products);
+  const summaryTotalPrice = useAppSelector((state) => state.cart.totalPrice);
+
+  const vat = (summaryTotalPrice * 0.18).toFixed(0);
+  const grandTotal = summaryTotalPrice + 50 + Number(vat);
   return (
-    <Fragment>
-      <div className={css.checkoutSummaryContainer}>
-        <h6>Summary</h6>
-        <ul className={css.checkoutSummaryItems}>
-          <li>item 1</li>
-          <li>item 2</li>
-        </ul>
-        <div className={css.checkoutSummary}>
-          <span>Total</span>
-          <span>$ 100</span>
-        </div>
-        <div className={css.checkoutSummary}>
-          <span>Shipping</span>
-          <span>$ 100</span>
-        </div>
-        <div className={css.checkoutSummary}>
-          <span>VAT(included)</span>
-          <span>$ 100</span>
-        </div>
-        <div className={`${css.checkoutSummary} ${css.grandTotal}`}>
-          <span>Grand total</span>
-          <span>$ 100</span>
-        </div>
-        <FunctionalButton name="checkout" />
+    <div className={css.checkoutSummaryContainer}>
+      <h6 className={css.summaryHeading}>Summary</h6>
+      <ul className={css.summaryProductList}>
+        {summaryProducts.map((product) => (
+          <CheckoutSummaryProducts key={product._id} products={product} />
+        ))}
+      </ul>
+
+      <div className={css.checkoutSummary}>
+        <span className={css.summaryTag}>Total</span>
+        <span className={css.summaryValue}>$ {summaryTotalPrice}</span>
       </div>
-    </Fragment>
+      <div className={css.checkoutSummary}>
+        <span className={css.summaryTag}>Shipping</span>
+        <span className={css.summaryValue}>$ 50</span>
+      </div>
+      <div className={css.checkoutSummary}>
+        <span className={css.summaryTag}>VAT(included)</span>
+        <span className={css.summaryValue}>$ {vat}</span>
+      </div>
+      <div className={`${css.checkoutSummary} ${css.grandTotal}`}>
+        <span className={css.summaryTag}>Grand total</span>
+        <span className={`${css.summaryValue} ${css.grandTotalValue}`}>
+          $ {grandTotal}
+        </span>
+      </div>
+      <FunctionalButton name="CONTINUE & PAY" />
+    </div>
   );
 };
 

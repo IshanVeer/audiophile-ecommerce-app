@@ -8,6 +8,7 @@ import ProductLinkButtonPrimary from "../UI/ProductLinkButtonPrimary";
 import { useParams } from "next/navigation";
 import { ProductProps } from "@/types/types";
 
+
 const ProductList: React.FC<{ products: ProductProps[] }> =  ({products}) => {
   const params = useParams();
   
