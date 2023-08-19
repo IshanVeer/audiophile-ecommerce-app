@@ -77,7 +77,7 @@ const NavBar: React.FC<{ products: productProps[] }> = ({ products }) => {
               </li>
             ))}
           </ul>
-          <NavCartButton onShow={showCartHandler}/>
+          {currentPathname !== "/checkout" && <NavCartButton onShow={showCartHandler}/>}
         </nav>
         
       </div>

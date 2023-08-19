@@ -6,7 +6,7 @@ import CheckoutSummaryProducts from "./CheckoutSummaryProducts";
 
 import FunctionalButton from "../UI/FunctionalButton";
 
-const CheckoutSummary = () => {
+const CheckoutSummary = ({onSubmit}) => {
   const summaryProducts = useAppSelector((state) => state.cart.products);
   const summaryTotalPrice = useAppSelector((state) => state.cart.totalPrice);
 
@@ -39,7 +39,7 @@ const CheckoutSummary = () => {
           $ {grandTotal}
         </span>
       </div>
-      <FunctionalButton name="CONTINUE & PAY" />
+      <FunctionalButton name="CONTINUE & PAY" onClick={onSubmit}/>
     </div>
   );
 };

@@ -2,13 +2,8 @@ import React, { Fragment } from "react";
 import { useAppDispatch, useAppSelector } from "@/hooks/hooks";
 import { cartActions } from "@/store/cart-slice";
 import Image from "next/image";
-
 import css from "./Cart.module.css";
-
-
 import CartProduct from "./CartProduct";
-
-import FunctionalButton from "../UI/FunctionalButton";
 import ProductLinkButtonPrimary from "../UI/ProductLinkButtonPrimary";
 
 const Cart = ({ onHide }) => {
