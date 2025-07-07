@@ -32,14 +32,14 @@
   .h6-bold {
     @apply text-[18px] uppercase leading-[24px] font-bold tracking-[1.3px];
   }
-  .overline {
+  .subtitle-overline {
     @apply text-[14px] uppercase leading-[19px] font-normal tracking-[10px];
   }
   .subtitle {
     @apply text-[13px] uppercase leading-[25px] font-bold tracking-[1px];
   }
   .body {
-    @apply text-[15px] uppercase leading-[25px] font-medium;
+    @apply text-[15px]  leading-[25px] font-medium;
   }
   .button-primary {
     @apply bg-primary-500 hover:bg-primary-300 text-light-100;
