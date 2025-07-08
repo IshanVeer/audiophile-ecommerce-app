@@ -35,7 +35,7 @@ export default function Home() {
         </div>
       </section>
       {/* Categories section */}
-      <section className="px-36">
+      <section className="px-36 py-28">
         <Categories />
       </section>
       {/* product section */}
@@ -99,7 +99,7 @@ export default function Home() {
           </div>
 
           {/* text */}
-          <div className="w-1/2 px-20 flex items-center rounded-md bg-[#f0f0f0]">
+          <div className="w-1/2 px-20 flex items-center rounded-md bg-light-200">
             <div className="">
               <h4 className="h4-bold mb-8">YX1 EARPHONES</h4>
               <Button buttonStyle="secondary" label="See Product" />
