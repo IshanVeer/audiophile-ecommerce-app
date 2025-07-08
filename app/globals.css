@@ -45,7 +45,7 @@
     @apply bg-primary-500 hover:bg-primary-300 text-light-100;
   }
   .button-secondary {
-    @apply bg-transparent border border-dark-100 hover:bg-dark-100 text-light-100;
+    @apply bg-transparent text-dark-100 border border-dark-100 hover:bg-dark-100 hover:text-light-100;
   }
 }
 
