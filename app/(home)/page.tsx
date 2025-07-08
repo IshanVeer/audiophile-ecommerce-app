@@ -1,4 +1,6 @@
+import Categories from "@/components/shared/Categories";
 import Button from "@/components/ui/Button";
+
 import Image from "next/image";
 
 export default function Home() {
@@ -30,6 +32,10 @@ export default function Home() {
             />
           </div>
         </div>
+      </section>
+      {/* Categories section */}
+      <section className="px-36">
+        <Categories />
       </section>
     </>
   );
