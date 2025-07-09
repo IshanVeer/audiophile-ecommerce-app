@@ -35,7 +35,7 @@ export default function Home() {
         </div>
       </section>
       {/* Categories section */}
-      <section className="px-36 py-36">
+      <section className="px-36 max-md:px-12 py-36">
         <Categories />
       </section>
       {/* product section */}
