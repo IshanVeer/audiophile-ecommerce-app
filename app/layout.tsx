@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import BrandDescription from "@/components/shared/BrandDescription";
+import MobileNav from "@/components/shared/MobileNav";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -24,6 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={` ${manrope.variable} antialiased`}>
         <Navbar />
+        <MobileNav />
         <section>{children}</section>
         <BrandDescription />
         <Footer />

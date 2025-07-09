@@ -8,7 +8,7 @@ const Navbar = () => {
     new Set(productData.map((product) => product.category))
   );
   return (
-    <nav className=" bg-dark-100 items-center px-36  ">
+    <nav className="max-md:hidden bg-dark-100 items-center px-36  ">
       <div className="border-b border-light-100/30 py-10 flex justify-between">
         {/* logo */}
         <Link href="/">

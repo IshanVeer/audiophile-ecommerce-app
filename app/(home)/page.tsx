@@ -9,10 +9,10 @@ export default function Home() {
     <>
       {/* hero section */}
 
-      <section className="px-36 h-[650px]  bg-dark-100">
-        <div className="flex items-center h-full  gap-20 border-none">
+      <section className="md:px-36 h-[650px]  bg-dark-100">
+        <div className="flex items-center h-full  gap-20 border-none max-md:bg-[url(/assets/home/tablet/image-header.jpg)] max-md:bg-no-repeat max-md:bg-center max-md:bg-cover">
           {/* text container */}
-          <div className="text-light-100 w-2/5 flex flex-col items-start gap-6">
+          <div className="text-light-100 md:w-2/5 flex flex-col items-start gap-6 max-md:items-center text-center">
             <p className="subtitle-overline text-light-100/50">NEW PRODUCT</p>
             <h1 className="h1-bold">XX99 Mark II Headphones</h1>
             <p className="body w-[349px] pb-4">
@@ -22,7 +22,7 @@ export default function Home() {
             <Button label="See Product" route="/" isLink />
           </div>
           {/* image container */}
-          <div className="w-3/5 h-full">
+          <div className="w-3/5 h-full max-md:hidden">
             {" "}
             <Image
               src="/assets/home/desktop/image-hero.jpg"
