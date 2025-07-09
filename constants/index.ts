@@ -592,3 +592,21 @@ export const categoryData = [
       "/assets/shared/desktop/image-category-thumbnail-earphones.png",
   },
 ];
+
+export const socialLinks = [
+  {
+    name: "facebook",
+    route: "https://www.facebook.com/",
+    logo: "/assets/shared/desktop/icon-facebook.svg",
+  },
+  {
+    name: "twitter",
+    route: "https://www.twitter.com/",
+    logo: "/assets/shared/desktop/icon-twitter.svg",
+  },
+  {
+    name: "instagram",
+    route: "https://www.instagram.com/",
+    logo: "/assets/shared/desktop/icon-instagram.svg",
+  },
+];
