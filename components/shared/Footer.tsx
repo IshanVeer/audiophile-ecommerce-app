@@ -8,11 +8,11 @@ const Footer = () => {
     new Set(productData.map((product) => product.category))
   );
   return (
-    <footer className="bg-dark-100  px-36 text-light-100">
-      <div className="border-t-4 w-1/10 border-primary-500"></div>
-      <div className="flex">
-        {/* text */}
-        <div className=" flex flex-col gap-12 w-1/2 pt-20 pb-16 ">
+    <footer className="bg-dark-100  px-36 max-md:px-12 text-light-100">
+      <div className="border-t-4 w-[100px] border-primary-500"></div>
+      <div>
+        {/* log + nav */}
+        <div className=" flex max-md:flex-col gap-12 justify-between pt-20 pb-16 ">
           <Link href="/">
             <Image
               src="./assets/shared/desktop/logo.svg"
@@ -21,18 +21,7 @@ const Footer = () => {
               width={150}
             />
           </Link>
-          <p className="body text-light-100/50">
-            Audiophile is an all in one stop to fulfill your audio needs.
-            We&apos;re a small team of music lovers and sound specialists who
-            are devoted to helping you get the most out of personal audio. Come
-            and visit our demo facility - we’re open 7 days a week.
-          </p>
-          <p className="text-[15px] font-bold text-light-100/50">
-            Copyright 2021. All Rights Reserved
-          </p>
-        </div>
-        {/* nav */}
-        <div className="pt-20 pb-16 flex flex-col gap-24 items-end w-1/2">
+
           <ul className="flex subtitle gap-6 uppercase">
             <li className="text-light-100 hover:text-primary-500 transition duration-150">
               <Link href="/">home</Link>
@@ -46,7 +35,20 @@ const Footer = () => {
               </li>
             ))}
           </ul>
-          <ul className="flex gap-4 items-center">
+        </div>
+        {/* nav */}
+        <div className="grid grid-cols-2  gap-8 pb-12">
+          <p className="body text-light-100/50 order-1 max-md:col-span-2">
+            Audiophile is an all in one stop to fulfill your audio needs.
+            We&apos;re a small team of music lovers and sound specialists who
+            are devoted to helping you get the most out of personal audio. Come
+            and visit our demo facility - we’re open 7 days a week.
+          </p>
+          <p className="text-[15px] font-bold text-light-100/50 order-3 max-md:order-2">
+            Copyright 2021. All Rights Reserved
+          </p>
+
+          <ul className="flex gap-4 items-center justify-end order-2 max-md:order-3">
             {socialLinks.map((social) => (
               <li key={social.name}>
                 <a href={social.route}>
