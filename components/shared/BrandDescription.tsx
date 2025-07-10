@@ -3,9 +3,9 @@ import React from "react";
 
 const BrandDescription = () => {
   return (
-    <div className="flex px-36 gap-34 my-36 items-center">
+    <div className="flex max-md:flex-col px-36 max-md:px-12 gap-34 max-md:gap-16 my-36 items-center">
       {/* text */}
-      <div className="w-2/5">
+      <div className="md:w-2/5 max-md:w-[600px]  max-md:text-center  max-md:order-2">
         <h1 className="h2-bold mb-8">
           Bringing you the <span className="text-primary-500">best</span> audio
           gear
@@ -20,13 +20,22 @@ const BrandDescription = () => {
         </p>
       </div>
       {/* image */}
-      <div className="w-1/2 rounded-md overflow-hidden">
+      <div className="md:w-1/2 max-md:w-full rounded-md overflow-hidden max-md:order1">
+        {/* desktop and mobile */}
         <Image
           src="/assets/shared/desktop/image-best-gear.jpg"
           alt="best-gear"
           height={1000}
           width={1000}
-          className="w-full object-cover"
+          className="w-full  max-md:hidden object-contain"
+        />
+        {/* tablet */}
+        <Image
+          src="/assets/shared/tablet/image-best-gear.jpg"
+          alt="best-gear"
+          height={1000}
+          width={1000}
+          className="w-full md:hidden object-contain"
         />
       </div>
     </div>

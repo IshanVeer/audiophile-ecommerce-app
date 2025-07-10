@@ -39,9 +39,9 @@ export default function Home() {
         <Categories />
       </section>
       {/* product section */}
-      <section className="px-36">
+      <section className="px-36 max-md:px-12">
         {/* product 1 */}
-        <div className="flex relative overflow-hidden items-start px-28 pt-28 rounded-md bg-primary-500">
+        <div className="flex max-md:flex-col relative overflow-hidden items-start max-md:items-center md:px-28 not-even: pt-28  max-md:py-20 rounded-md bg-primary-500">
           {/* background pattern */}
           <div>
             <Image
@@ -49,11 +49,11 @@ export default function Home() {
               alt="pattern-circle"
               height={500}
               width={500}
-              className="absolute w-5xl -top-12 -left-47 z-0"
+              className="absolute w-[1000px] -top-12 max-md:top-0 -left-47 max-md:left-0 z-0"
             />
           </div>
           {/* product image */}
-          <div className="z-10 w-[420px] -mb-3">
+          <div className="z-10 md:w-[420px]  md:-mb-3 max-md:pb-8">
             <Image
               src="/assets/home/desktop/image-speaker-zx9.png"
               alt="image-speaker-zx9"
@@ -64,14 +64,14 @@ export default function Home() {
           </div>
           {/* text container */}
 
-          <div className="z-10 w-[450px] mt-6 pl-36 text-light-100">
+          <div className="z-10 w-[450px] max-md:w-[350px] max-md:text-center mt-6 md:pl-36 text-light-100">
             <h2 className="h1-bold">ZX9 SPEAKER</h2>
             <p className="body py-8">
               Upgrade to premium speakers that are phenomenally built to deliver
               truly remarkable sound.
             </p>
             <Link
-              className="bg-dark-100 text-[13px] leading-[18px] uppercase border border-dark-100 px-6 py-2 hover:bg-[#4c4c4c] transition duration-150"
+              className="bg-dark-100 text-[13px] font-bold leading-[18px] tacking-[1px] uppercase border border-dark-100 px-9 py-3.5 hover:bg-[#4c4c4c] transition duration-150"
               href="/"
             >
               See product
@@ -88,18 +88,18 @@ export default function Home() {
         {/* product 3 */}
         <div className="flex gap-6">
           {/* image  */}
-          <div className="w-1/2 rounded-md overflow-hidden">
+          <div className="w-1/2 max-md:h-[320px] rounded-md overflow-hidden">
             <Image
               src="/assets/home/desktop/image-earphones-yx1.jpg"
               alt="earphones-yx1"
               height={500}
               width={500}
-              className="w-full object-cover"
+              className="w-full h-full object-cover"
             />
           </div>
 
           {/* text */}
-          <div className="w-1/2 px-20 flex items-center rounded-md bg-light-200">
+          <div className="w-1/2 md:px-20 flex items-center max-md:justify-center rounded-md bg-light-200">
             <div className="">
               <h4 className="h4-bold mb-8">YX1 EARPHONES</h4>
               <Button buttonStyle="secondary" label="See Product" />
