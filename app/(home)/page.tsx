@@ -12,9 +12,11 @@ export default function Home() {
       <section className="md:px-36 h-[650px]  bg-dark-100">
         <div className="flex items-center h-full  gap-20 border-none max-md:bg-[url(/assets/home/tablet/image-header.jpg)] max-md:bg-no-repeat max-md:bg-center max-md:bg-cover">
           {/* text container */}
-          <div className="text-light-100 md:w-2/5 flex flex-col items-start gap-6 max-md:items-center text-center">
+          <div className="text-light-100 md:w-2/5 flex flex-col items-start gap-6 max-md:items-center max-md:text-center">
             <p className="subtitle-overline text-light-100/50">NEW PRODUCT</p>
-            <h1 className="h1-bold">XX99 Mark II Headphones</h1>
+            <h1 className="h1-bold max-sm:text-[36px]">
+              XX99 Mark II Headphones
+            </h1>
             <p className="body w-[349px] pb-4">
               Experience natural, lifelike audio and exceptional build quality
               made for the passionate music enthusiast.
@@ -35,11 +37,11 @@ export default function Home() {
         </div>
       </section>
       {/* Categories section */}
-      <section className="px-36 max-md:px-12 py-36">
+      <section className="px-36 max-md:px-12 max-sm:px-8 py-36 max-sm:py-30">
         <Categories />
       </section>
       {/* product section */}
-      <section className="px-36 max-md:px-12">
+      <section className="px-36 max-md:px-12 max-sm:px-8">
         {/* product 1 */}
         <div className="flex max-md:flex-col relative overflow-hidden items-start max-md:items-center md:px-28 not-even: pt-28  max-md:py-20 rounded-md bg-primary-500">
           {/* background pattern */}
@@ -49,7 +51,7 @@ export default function Home() {
               alt="pattern-circle"
               height={500}
               width={500}
-              className="absolute w-[1000px] -top-12 max-md:top-0 -left-47 max-md:left-0 z-0"
+              className="absolute w-[1000px]  -top-12 max-md:top-0 -left-47 max-md:left-0 z-0"
             />
           </div>
           {/* product image */}
@@ -59,13 +61,13 @@ export default function Home() {
               alt="image-speaker-zx9"
               height={500}
               width={500}
-              className="w-full"
+              className="w-full max-sm:w-[200px]"
             />
           </div>
           {/* text container */}
 
-          <div className="z-10 w-[450px] max-md:w-[350px] max-md:text-center mt-6 md:pl-36 text-light-100">
-            <h2 className="h1-bold">ZX9 SPEAKER</h2>
+          <div className="z-10 w-[450px] max-md:w-[350px] max-sm:w-[280px] max-md:text-center mt-6 md:pl-36 text-light-100">
+            <h2 className="h1-bold max-sm:text-[36px]">ZX9 SPEAKER</h2>
             <p className="body py-8">
               Upgrade to premium speakers that are phenomenally built to deliver
               truly remarkable sound.
@@ -79,16 +81,16 @@ export default function Home() {
           </div>
         </div>
         {/* product 2 */}
-        <div className="h-[320px] rounded-md my-6 flex items-center px-20  bg-no-repeat bg-cover bg-center w-full bg-[url(/assets/home/desktop/image-speaker-zx7.jpg)]">
+        <div className="h-[320px] rounded-md my-6 flex items-center px-20 max-sm:px-6  bg-no-repeat bg-cover bg-center w-full bg-[url(/assets/home/desktop/image-speaker-zx7.jpg)]">
           <div>
             <h4 className="h4-bold mb-8">ZX7 SPEAKER</h4>
             <Button buttonStyle="secondary" label="See Product" />
           </div>
         </div>
         {/* product 3 */}
-        <div className="flex gap-6">
+        <div className="flex max-sm:flex-col gap-6">
           {/* image  */}
-          <div className="w-1/2 max-md:h-[320px] rounded-md overflow-hidden">
+          <div className="sm:w-1/2 max-md:h-[320px] rounded-md overflow-hidden">
             <Image
               src="/assets/home/desktop/image-earphones-yx1.jpg"
               alt="earphones-yx1"
@@ -99,7 +101,7 @@ export default function Home() {
           </div>
 
           {/* text */}
-          <div className="w-1/2 md:px-20 flex items-center max-md:justify-center rounded-md bg-light-200">
+          <div className="sm:w-1/2 md:px-20 max-sm:px-8 max-sm:h-[320px] flex max-sm:flex-col items-center max-md:justify-center  rounded-md bg-light-200">
             <div className="">
               <h4 className="h4-bold mb-8">YX1 EARPHONES</h4>
               <Button buttonStyle="secondary" label="See Product" />

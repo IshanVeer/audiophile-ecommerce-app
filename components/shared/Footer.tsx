@@ -9,10 +9,10 @@ const Footer = () => {
   );
   return (
     <footer className="bg-dark-100  px-36 max-md:px-12 text-light-100">
-      <div className="border-t-4 w-[100px] border-primary-500"></div>
+      <div className="border-t-4 w-[100px] max-sm:mx-auto border-primary-500"></div>
       <div>
         {/* log + nav */}
-        <div className=" flex max-md:flex-col gap-12 justify-between pt-20 pb-16 ">
+        <div className=" flex max-md:flex-col max-sm:items-center gap-12 justify-between  pt-20 pb-16 ">
           <Link href="/">
             <Image
               src="./assets/shared/desktop/logo.svg"
@@ -22,7 +22,7 @@ const Footer = () => {
             />
           </Link>
 
-          <ul className="flex subtitle gap-6 uppercase">
+          <ul className="flex max-sm:flex-col max-sm:items-center subtitle gap-6 uppercase">
             <li className="text-light-100 hover:text-primary-500 transition duration-150">
               <Link href="/">home</Link>
             </li>
@@ -37,8 +37,8 @@ const Footer = () => {
           </ul>
         </div>
         {/* nav */}
-        <div className="grid grid-cols-2  gap-8 pb-12">
-          <p className="body text-light-100/50 order-1 max-md:col-span-2">
+        <div className="grid grid-cols-2 max-sm:grid-cols-1 max-sm:text-center gap-8 pb-12">
+          <p className="body text-light-100/50 order-1 sm:max-md:col-span-2">
             Audiophile is an all in one stop to fulfill your audio needs.
             We&apos;re a small team of music lovers and sound specialists who
             are devoted to helping you get the most out of personal audio. Come
@@ -48,7 +48,7 @@ const Footer = () => {
             Copyright 2021. All Rights Reserved
           </p>
 
-          <ul className="flex gap-4 items-center justify-end order-2 max-md:order-3">
+          <ul className="flex gap-4 items-center justify-end max-sm:justify-center order-2 max-md:order-3">
             {socialLinks.map((social) => (
               <li key={social.name}>
                 <a href={social.route}>

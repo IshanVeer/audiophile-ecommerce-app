@@ -7,10 +7,10 @@ const Categories = () => {
   return (
     <>
       {/* categories */}
-      <ul className="flex gap-6 max-md:gap-3  items-center">
+      <ul className="flex max-sm:flex-col gap-x-6 max-sm:gap-y-24 max-md:gap-x-3  items-center">
         {categoryData.map((category) => (
           <li
-            className="bg-light-200 flex items-end py-12 max-md:py-7  w-full relative h-[204px] max-md:h-[180px] rounded-md"
+            className="bg-light-200 flex items-end py-12 max-md:py-7  w-full relative h-[204px] max-md:h-[180px] max-sm:h-[200px] rounded-md"
             key={category.category}
           >
             <Image
@@ -18,7 +18,7 @@ const Categories = () => {
               alt={category.category}
               height={700}
               width={700}
-              className="w-[180px] max-md:w-[180px] absolute -top-14 left-22 max-md:left-5 object-contain"
+              className="w-[180px] max-sm:w-[200px] max-md:w-[180px] absolute -top-14 left-1/2 -translate-x-1/2 max-md:left-5 max-sm:left-46 object-contain"
             />
             <div className="w-36 text-center mx-auto">
               <h6 className="h6-bold py-3">{category.category}</h6>

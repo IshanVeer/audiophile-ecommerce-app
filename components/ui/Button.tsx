@@ -16,7 +16,7 @@ const Button = ({
   isLink = false,
   route,
 }: ButtonProps) => {
-  const buttonClass = `${className} uppercase text-[13px] leading-[18px] cursor-pointer px-9 py-3.5 transition duration-150 ${
+  const buttonClass = `${className} uppercase text-[13px] font-bold leading-[18px] cursor-pointer px-9 py-3.5 transition duration-150 ${
     buttonStyle === "secondary" ? "button-secondary" : "button-primary"
   }`;
 

@@ -3,10 +3,10 @@ import React from "react";
 
 const BrandDescription = () => {
   return (
-    <div className="flex max-md:flex-col px-36 max-md:px-12 gap-34 max-md:gap-16 my-36 items-center">
+    <div className="flex max-md:flex-col px-36 max-md:px-12 max-sm:px-8 gap-34 max-md:gap-16 my-36 max-sm:my-24 items-center">
       {/* text */}
-      <div className="md:w-2/5 max-md:w-[600px]  max-md:text-center  max-md:order-2">
-        <h1 className="h2-bold mb-8">
+      <div className="md:w-2/5 max-md:w-[600px] max-sm:w-full  max-md:text-center  max-md:order-2">
+        <h1 className="h2-bold max-sm:h4-bold mb-8">
           Bringing you the <span className="text-primary-500">best</span> audio
           gear
         </h1>
@@ -27,7 +27,7 @@ const BrandDescription = () => {
           alt="best-gear"
           height={1000}
           width={1000}
-          className="w-full  max-md:hidden object-contain"
+          className="w-full  max-md:hidden max-sm:block object-contain"
         />
         {/* tablet */}
         <Image
@@ -35,7 +35,7 @@ const BrandDescription = () => {
           alt="best-gear"
           height={1000}
           width={1000}
-          className="w-full md:hidden object-contain"
+          className="w-full md:hidden max-sm:hidden object-contain"
         />
       </div>
     </div>
