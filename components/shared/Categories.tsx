@@ -18,7 +18,7 @@ const Categories = () => {
               alt={category.category}
               height={700}
               width={700}
-              className="w-[180px] max-sm:w-[200px] max-md:w-[180px] absolute -top-14 left-1/2 -translate-x-1/2 max-md:left-5 max-sm:left-46 object-contain"
+              className="w-[180px] max-sm:w-[200px] max-md:w-[180px] absolute -top-14 left-1/2 -translate-x-1/2  object-contain"
             />
             <div className="w-36 text-center mx-auto">
               <h6 className="h6-bold py-3">{category.category}</h6>
