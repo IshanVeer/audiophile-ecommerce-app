@@ -11,8 +11,8 @@ import Link from "next/link";
 
 const MobileNav = () => {
   return (
-    <div className="md:hidden px-12 py-8 bg-dark-100 flex justify-between items-center">
-      <div className="flex items-center gap-6">
+    <nav className="bg-dark-100 flex justify-between px-8 py-6 border-b border-light-100/10">
+      <div className="flex gap-4">
         <Drawer direction="top">
           <DrawerTrigger>
             <Image
@@ -20,39 +20,39 @@ const MobileNav = () => {
               alt="nav-menu"
               height={20}
               width={20}
-              className="object-cover"
             />
           </DrawerTrigger>
-          <DrawerContent className="px-12 max-sm:px-8 pt-32 pb-26">
+          <DrawerContent className="px-8 py-20">
             <DrawerTitle className="hidden">
               Are you absolutely sure?
             </DrawerTitle>
-            <ul className="flex flex-wrap max-sm:flex-col gap-x-3 max-sm:gap-y-24 sm:mx-auto sm:justify-center items-center">
+            <ul className="flex flex-col gap-12">
               {categoryData.map((category) => (
                 <li
-                  className="bg-light-200 flex items-end py-7 relative h-[180px] max-sm:h-[240px] w-[214px] max-sm:w-full rounded-md"
-                  key={category.category}
+                  className="bg-light-200 pt-23 pb-5 rounded-md relative w-full "
+                  key={category.name}
                 >
                   <Image
-                    src={category.categoryImage}
-                    alt={category.category}
-                    height={700}
-                    width={700}
-                    className="w-[180px] max-sm:w-[250px] absolute -top-14 left-5 max-sm:left-38 object-contain"
+                    src={category.image}
+                    alt={category.name}
+                    height={105}
+                    width={105}
+                    className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/3"
                   />
-                  <div className="w-36 text-center mx-auto">
-                    <h6 className="h6-bold py-3">{category.category}</h6>
+                  <div className="text-center">
+                    <p className="text-[15px] pb-4 leading-[20px] font-bold uppercase tracking-[1.7px]">
+                      {category.name}
+                    </p>
                     <Link
-                      href={`/${category.category}`}
-                      className="flex items-center gap-2 text-[13px] font-bold hover:text-primary-500 leading-[18px] uppercase tracking-[1px] justify-center text-dark-100/50 transition duration-150"
+                      className="flex text-[13px] text-dark-100/50 font-bold leading-[18px] tracking-[1px] uppercase justify-center items-center gap-2"
+                      href={`/${category.name}`}
                     >
-                      <p>Shop</p>
-
+                      <p>shop</p>{" "}
                       <Image
                         src="/assets/shared/desktop/icon-arrow-right.svg"
                         alt="link"
-                        height={7}
-                        width={7}
+                        height={10}
+                        width={10}
                       />
                     </Link>
                   </div>
@@ -61,7 +61,6 @@ const MobileNav = () => {
             </ul>
           </DrawerContent>
         </Drawer>
-
         <Image
           src="/assets/shared/desktop/logo.svg"
           alt="logo"
@@ -71,11 +70,11 @@ const MobileNav = () => {
       </div>
       <Image
         src="/assets/shared/desktop/icon-cart.svg"
-        alt="logo"
         height={25}
         width={25}
+        alt="cart"
       />
-    </div>
+    </nav>
   );
 };
 

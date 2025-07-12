@@ -577,19 +577,16 @@ export const productData = [
 
 export const categoryData = [
   {
-    category: "headphones",
-    categoryImage:
-      "/assets/shared/desktop/image-category-thumbnail-headphones.png",
+    name: "headphones",
+    image: "/assets/shared/desktop/image-category-thumbnail-headphones.png",
   },
   {
-    category: "speakers",
-    categoryImage:
-      "/assets/shared/desktop/image-category-thumbnail-speakers.png",
+    name: "speakers",
+    image: "/assets/shared/desktop/image-category-thumbnail-speakers.png",
   },
   {
-    category: "earphones",
-    categoryImage:
-      "/assets/shared/desktop/image-category-thumbnail-earphones.png",
+    name: "earphones",
+    image: "/assets/shared/desktop/image-category-thumbnail-earphones.png",
   },
 ];
 
