@@ -12,7 +12,7 @@ import Link from "next/link";
 const MobileNav = () => {
   return (
     <nav className="bg-dark-100 flex justify-between px-8 py-6 border-b border-light-100/10">
-      <div className="flex gap-4">
+      <div className="flex gap-6">
         <Drawer direction="top">
           <DrawerTrigger>
             <Image
@@ -61,12 +61,14 @@ const MobileNav = () => {
             </ul>
           </DrawerContent>
         </Drawer>
-        <Image
-          src="/assets/shared/desktop/logo.svg"
-          alt="logo"
-          height={150}
-          width={150}
-        />
+        <Link href="/">
+          <Image
+            src="/assets/shared/desktop/logo.svg"
+            alt="logo"
+            height={150}
+            width={150}
+          />
+        </Link>
       </div>
       <Image
         src="/assets/shared/desktop/icon-cart.svg"

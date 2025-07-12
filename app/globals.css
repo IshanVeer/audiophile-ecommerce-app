@@ -16,6 +16,9 @@
 @utility h1-bold {
   @apply text-[56px] uppercase leading-[58px] font-bold tracking-[2px];
 }
+@utility h1-mobile-bold {
+  @apply text-[36px] uppercase leading-[40px] font-bold tracking-[1.29px];
+}
 @utility h2-bold {
   @apply text-[40px] uppercase leading-[44px] font-bold tracking-[1.5px];
 }
