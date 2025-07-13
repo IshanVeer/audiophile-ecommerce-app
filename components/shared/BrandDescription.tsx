@@ -3,9 +3,9 @@ import React from "react";
 
 const BrandDescription = () => {
   return (
-    <div className="px-6 sm:px-10 py-24">
+    <div className="px-6 sm:px-10 lg:px-40 lg:flex items-center gap-30  py-24 lg:py-40">
       <Image
-        src="/assets/shared/desktop/image-best-gear.jpg"
+        src="/assets/shared/mobile/image-best-gear.jpg"
         alt="best-gear"
         height={1000}
         width={1000}
@@ -16,9 +16,16 @@ const BrandDescription = () => {
         alt="best-gear"
         height={1000}
         width={1000}
-        className="rounded-md max-sm:hidden"
+        className="rounded-md max-sm:hidden lg:hidden"
       />
-      <div className="text-center sm:max-w-[575px] mx-auto mt-10">
+      <Image
+        src="/assets/shared/desktop/image-best-gear.jpg"
+        alt="best-gear"
+        height={1000}
+        width={1000}
+        className="rounded-md w-1/2 max-lg:hidden lg:order-2"
+      />
+      <div className="text-center lg:w-1/2 lg:text-start sm:max-w-[575px] mx-auto lg:mx-0 mt-10 lg:order-1">
         <h4 className="h4-bold sm:h2-bold">
           Bringing you the <span className="text-primary-500">best</span> audio
           gear

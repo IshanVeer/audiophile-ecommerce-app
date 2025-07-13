@@ -7,7 +7,7 @@ const Categories = () => {
   return (
     <>
       {" "}
-      <ul className="flex flex-col sm:flex-row gap-12 sm:gap-4">
+      <ul className="flex flex-col sm:flex-row gap-12 sm:gap-4 lg:gap-8">
         {categoryData.map((category) => (
           <li
             className="bg-light-200 pt-23 pb-6 rounded-md relative w-full "
@@ -18,7 +18,7 @@ const Categories = () => {
               alt={category.name}
               height={115}
               width={115}
-              className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/3"
+              className="absolute lg:w-[125px] top-0 left-1/2 -translate-x-1/2 -translate-y-1/3"
             />
             <div className="text-center">
               <p className="text-[15px] pb-4 leading-[20px] font-bold uppercase tracking-[1.7px]">

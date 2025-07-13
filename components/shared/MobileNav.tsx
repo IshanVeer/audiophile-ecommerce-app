@@ -11,7 +11,7 @@ import Link from "next/link";
 
 const MobileNav = () => {
   return (
-    <nav className="bg-dark-100 flex justify-between px-6 py-6 border-b border-light-100/10">
+    <nav className="lg:hidden bg-dark-100 flex justify-between px-6 py-6 border-b border-light-100/10">
       <div className="flex gap-6">
         <Drawer direction="top">
           <DrawerTrigger>

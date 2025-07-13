@@ -8,31 +8,43 @@ export default function Home() {
   return (
     <>
       {/* hero section */}
-      <section className="flex items-center py-30 sm:pt-36 sm:pb-54 bg-[url(/assets/home/mobile/image-header.jpg)] sm:bg-[url(/assets/home/tablet/image-header.jpg)] bg-no-repeat bg-center bg-cover">
-        <div className="max-w-[328px] sm:max-w-[400px] mx-auto text-center">
+      <section className="flex lg:justify-between lg:h-[650px] items-center py-30 sm:pt-36 sm:pb-54 lg:py-0 lg:px-40 bg-[url(/assets/home/mobile/image-header.jpg)] sm:bg-[url(/assets/home/tablet/image-header.jpg)] lg:bg-none lg:bg-dark-100 bg-no-repeat bg-center bg-cover">
+        {/* text container */}
+
+        <div className="max-w-[328px] sm:max-w-[400px] lg:py-24 mx-auto lg:mx-0 text-center lg:text-start">
           <p className="subtitle-overline text-light-100/50 pb-4 sm:pb-6">
             NEW PRODUCT
           </p>
           <h1 className="h1-mobile-bold sm:h1-bold text-light-100 pb-6">
             XX99 Mark II HeadphoneS
           </h1>
-          <p className="body text-white/50 pb-10 sm:max-w-[350px] mx-auto">
+          <p className="body text-white/50 pb-10 sm:max-w-[350px] mx-auto lg:mx-0">
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
           <Button label="See Product" isLink route="/" />
         </div>
+        {/* image */}
+        <div className="w-1/2 h-full max-lg:hidden">
+          <Image
+            className="h-full object-cover"
+            src="/assets/home/desktop/image-hero.jpg"
+            alt="hero-image"
+            height={1000}
+            width={1000}
+          />
+        </div>
       </section>
 
       {/* category section */}
-      <section className="px-6 sm:px-10 py-24">
+      <section className="px-6 sm:px-10 lg:px-40 py-24 lg:py-40">
         <Categories />
       </section>
 
       {/* product section */}
-      <section className="px-6 sm:px-10">
+      <section className="px-6 sm:px-10 lg:px-40">
         {/* product 1 */}
-        <div className="flex flex-col gap-12 mb-6  items-center  relative overflow-hidden  bg-primary-500 py-20 rounded-md">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 mb-6  items-center  relative overflow-hidden  bg-primary-500 py-20 lg:px-8 rounded-md">
           <div>
             <Image
               src="/assets/home/desktop/pattern-circles.svg"
@@ -50,12 +62,12 @@ export default function Home() {
               alt="speaker-zx9"
               height={500}
               width={500}
-              className="max-w-[180px]"
+              className="max-w-[180px] lg:max-w-[400px] lg:-mb-24"
             />
           </div>
           {/* text container */}
-          <div className="max-w-[280px] sm:max-w-[350px]  text-center">
-            <h2 className="h1-mobile-bold text-light-100 pb-6 w-1/2 mx-auto">
+          <div className="max-w-[280px] sm:max-w-[350px]  text-center lg:text-start">
+            <h2 className="h1-mobile-bold text-light-100 pb-6 w-1/2 mx-auto lg:mx-0">
               ZX9 SPEAKER
             </h2>
             <p className="body text-light-100/75 pb-8 sm:pb-12">
@@ -71,7 +83,7 @@ export default function Home() {
           </div>
         </div>
         {/* product 2 */}
-        <div className="py-28 px-6 mb-6 bg-[url(/assets/home/mobile/image-speaker-zx7.jpg)] sm:bg-[url(/assets/home/tablet/image-speaker-zx7.jpg)] bg-no-repeat bg-center bg-cover rounded-md">
+        <div className="py-28 px-6 lg:px-20 mb-6 bg-[url(/assets/home/mobile/image-speaker-zx7.jpg)] sm:bg-[url(/assets/home/tablet/image-speaker-zx7.jpg)] lg:bg-[url(/assets/home/desktop/image-speaker-zx7.jpg)] bg-no-repeat bg-center bg-cover rounded-md">
           <div>
             <h4 className="h4-bold mb-8">ZX7 SPEAKER</h4>
             <Button
@@ -90,14 +102,21 @@ export default function Home() {
             alt="earphones-yx1"
             height={500}
             width={500}
-            className="rounded-md sm:w-1/2 sm:hidden"
+            className="rounded-md w-full sm:w-1/2 sm:hidden"
           />
           <Image
             src="/assets/home/tablet/image-earphones-yx1.jpg"
             alt="earphones-yx1"
             height={500}
             width={500}
-            className="rounded-md sm:w-1/2 max-sm:hidden"
+            className="rounded-md sm:w-1/2 max-sm:hidden lg:hidden"
+          />
+          <Image
+            src="/assets/home/desktop/image-earphones-yx1.jpg"
+            alt="earphones-yx1"
+            height={500}
+            width={500}
+            className="rounded-md sm:w-1/2 max-lg:hidden"
           />
           <div className="bg-light-200 flex items-center py-14 px-6 rounded-md sm:w-1/2">
             <div>
