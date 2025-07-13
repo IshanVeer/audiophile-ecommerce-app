@@ -25,7 +25,7 @@ export default function Home() {
       </section>
 
       {/* category section */}
-      <section className="px-8 py-20">
+      <section className="px-8 py-24">
         <Categories />
       </section>
 
