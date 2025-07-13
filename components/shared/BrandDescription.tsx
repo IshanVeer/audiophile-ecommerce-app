@@ -3,16 +3,23 @@ import React from "react";
 
 const BrandDescription = () => {
   return (
-    <div className="px-8 py-24">
+    <div className="px-6 sm:px-10 py-24">
       <Image
         src="/assets/shared/desktop/image-best-gear.jpg"
         alt="best-gear"
         height={1000}
         width={1000}
-        className="rounded-md"
+        className="rounded-md sm:hidden"
       />
-      <div className="text-center mt-10">
-        <h4 className="h4-bold">
+      <Image
+        src="/assets/shared/tablet/image-best-gear.jpg"
+        alt="best-gear"
+        height={1000}
+        width={1000}
+        className="rounded-md max-sm:hidden"
+      />
+      <div className="text-center sm:max-w-[575px] mx-auto mt-10">
+        <h4 className="h4-bold sm:h2-bold">
           Bringing you the <span className="text-primary-500">best</span> audio
           gear
         </h4>

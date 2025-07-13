@@ -7,17 +7,17 @@ const Categories = () => {
   return (
     <>
       {" "}
-      <ul className="flex flex-col gap-12">
+      <ul className="flex flex-col sm:flex-row gap-12 sm:gap-4">
         {categoryData.map((category) => (
           <li
-            className="bg-light-200 pt-23 pb-5 rounded-md relative w-full "
+            className="bg-light-200 pt-23 pb-6 rounded-md relative w-full "
             key={category.name}
           >
             <Image
               src={category.image}
               alt={category.name}
-              height={105}
-              width={105}
+              height={115}
+              width={115}
               className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/3"
             />
             <div className="text-center">
