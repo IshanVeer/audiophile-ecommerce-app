@@ -9,9 +9,9 @@ import Categories from "@/components/shared/Categories";
 const CategoryPage = () => {
   const { category } = useParams();
 
-  const productDataByCategory = productData.filter(
-    (product) => product.category === category
-  );
+  const sortedProductDataByCategory = productData
+    .filter((product) => product.category === category)
+    .sort((a, b) => (a.new === b.new ? 0 : a.new ? -1 : 1));
 
   return (
     <div>
@@ -20,10 +20,10 @@ const CategoryPage = () => {
       </div>
       <section className="section-container pt-30">
         <ul>
-          {productDataByCategory.map((product) => (
+          {sortedProductDataByCategory.map((product) => (
             <li key={product.id} className="pb-30">
               <Image
-                src={product.image.desktop}
+                src={product.image.mobile}
                 alt={product.name}
                 height={1000}
                 width={1000}
