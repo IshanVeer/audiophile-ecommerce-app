@@ -15,28 +15,48 @@ const CategoryPage = () => {
 
   return (
     <div>
-      <div className="bg-dark-100 text-light-100 text-center py-8">
-        <h2 className="h4-bold">{category}</h2>
+      <div className="bg-dark-100 text-light-100 text-center py-10 sm:py-24">
+        <h2 className="h4-bold sm:h2-bold">{category}</h2>
       </div>
       <section className="section-container pt-30">
         <ul>
           {sortedProductDataByCategory.map((product) => (
-            <li key={product.id} className="pb-30">
+            <li
+              key={product.id}
+              className="pb-30 lg:pb-40 lg:flex items-center gap-32 lg:even:flex-row-reverse"
+            >
               <Image
-                src={product.image.mobile}
+                src={product.categoryImage.mobile}
                 alt={product.name}
                 height={1000}
                 width={1000}
-                className="rounded-md"
+                className="rounded-md sm:hidden object-cover"
               />
+              <Image
+                src={product.categoryImage.tablet}
+                alt={product.name}
+                height={1000}
+                width={1000}
+                className="rounded-md max-sm:hidden lg:hidden object-cover"
+              />
+              <Image
+                src={product.categoryImage.desktop}
+                alt={product.name}
+                height={1000}
+                width={1000}
+                className="rounded-md max-lg:hidden object-cover lg:w-1/2"
+              />
+
               {/* text container */}
-              <div className="text-center py-8">
+              <div className="text-center py-8 sm:max-w-[572px] sm:mx-auto lg:text-start">
                 {product.new && (
                   <p className="subtitle-overline text-primary-500">
                     New Product
                   </p>
                 )}
-                <h2 className="h4-bold py-6">{product.name}</h2>
+                <h2 className="h4-bold py-6 sm:h2-bold sm:max-w-[60%] lg:max-w-full sm:mx-auto lg:mx-0">
+                  {product.name}
+                </h2>
                 <p className="body text-dark-100/50 pb-10">
                   {product.description}
                 </p>
@@ -46,7 +66,7 @@ const CategoryPage = () => {
           ))}
         </ul>
       </section>
-      <section className="section-container">
+      <section className="section-container pt-8">
         <Categories />
       </section>
     </div>
