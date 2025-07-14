@@ -22,7 +22,11 @@ export default function Home() {
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-          <Button label="See Product" isLink route="/" />
+          <Button
+            label="See Product"
+            isLink
+            route="/headphones/xx99-mark-two-headphones"
+          />
         </div>
         {/* image */}
         <div className="w-1/2 h-full max-lg:hidden">
@@ -66,7 +70,7 @@ export default function Home() {
             />
           </div>
           {/* text container */}
-          <div className="max-w-[280px] sm:max-w-[350px]  text-center lg:text-start">
+          <div className="max-w-[280px] z-10 sm:max-w-[350px]  text-center lg:text-start">
             <h2 className="h1-mobile-bold text-light-100 pb-6 w-1/2 mx-auto lg:mx-0">
               ZX9 SPEAKER
             </h2>
@@ -75,8 +79,8 @@ export default function Home() {
               truly remarkable sound.
             </p>
             <Link
-              className="bg-dark-100 text-[13px] text-light-100 font-bold leading-[18px] tacking-[1px] uppercase border border-dark-100 px-9 py-3.5 hover:bg-[#4c4c4c] transition duration-150"
-              href="/"
+              className="bg-dark-100 text-[13px] cursor-pointer text-light-100 font-bold leading-[18px] tacking-[1px] uppercase border border-dark-100 px-9 py-3.5 hover:bg-[#4c4c4c] transition duration-150"
+              href="/speakers/zx9-speaker"
             >
               See product
             </Link>
@@ -89,7 +93,7 @@ export default function Home() {
             <Button
               label="See product"
               isLink
-              route="/"
+              route="/speakers/zx7-speaker"
               buttonStyle="secondary"
             />
           </div>
@@ -124,7 +128,7 @@ export default function Home() {
               <Button
                 label="See product"
                 isLink
-                route="/"
+                route="/earphones/yx1-earphones"
                 buttonStyle="secondary"
               />
             </div>

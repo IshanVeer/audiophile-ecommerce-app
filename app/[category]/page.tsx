@@ -60,7 +60,11 @@ const CategoryPage = () => {
                 <p className="body text-dark-100/50 pb-10">
                   {product.description}
                 </p>
-                <Button label="See Product" isLink route="/" />
+                <Button
+                  label="See Product"
+                  isLink
+                  route={`/${category}/${product.slug}`}
+                />
               </div>
             </li>
           ))}

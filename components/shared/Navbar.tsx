@@ -10,12 +10,15 @@ const Navbar = () => {
   return (
     <nav className="max-lg:hidden bg-dark-100 px-40 text-light-100">
       <div className="flex justify-between items-center border-b border-light-100/20 py-12">
-        <Image
-          src="/assets/shared/desktop/logo.svg"
-          alt="logo"
-          height={150}
-          width={150}
-        />
+        <Link href="/">
+          <Image
+            src="/assets/shared/desktop/logo.svg"
+            alt="logo"
+            height={150}
+            width={150}
+          />
+        </Link>
+
         <ul className="flex gap-8 subtitle">
           <li className="hover:text-primary-500 transition duration-150">
             <Link href="/">home</Link>
