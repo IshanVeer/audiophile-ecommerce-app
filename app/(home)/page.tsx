@@ -11,7 +11,7 @@ export default function Home() {
       <section className="flex lg:justify-between lg:h-[650px] items-center py-30 sm:pt-36 sm:pb-54 lg:py-0 lg:px-40 bg-[url(/assets/home/mobile/image-header.jpg)] sm:bg-[url(/assets/home/tablet/image-header.jpg)] lg:bg-none lg:bg-dark-100 bg-no-repeat bg-center bg-cover">
         {/* text container */}
 
-        <div className="max-w-[328px] sm:max-w-[400px] lg:py-24 mx-auto lg:mx-0 text-center lg:text-start">
+        <div className="max-w-[328px] sm:max-w-[400px] lg:py-30 mx-auto lg:mx-0 text-center lg:text-start">
           <p className="subtitle-overline text-light-100/50 pb-4 sm:pb-6">
             NEW PRODUCT
           </p>
@@ -37,7 +37,7 @@ export default function Home() {
       </section>
 
       {/* category section */}
-      <section className="px-6 sm:px-10 lg:px-40 py-24 lg:py-40">
+      <section className="section-container py-30 lg:py-40">
         <Categories />
       </section>
 

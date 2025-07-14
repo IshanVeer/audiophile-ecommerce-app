@@ -3,7 +3,7 @@ import React from "react";
 
 const BrandDescription = () => {
   return (
-    <div className="px-6 sm:px-10 lg:px-40 lg:flex items-center gap-30  py-24 lg:py-40">
+    <div className="section-container py-30 lg:py-40 lg:flex items-center gap-30">
       <Image
         src="/assets/shared/mobile/image-best-gear.jpg"
         alt="best-gear"

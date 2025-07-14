@@ -49,6 +49,9 @@
 @utility button-secondary {
   @apply bg-transparent text-dark-100 border border-dark-100 hover:bg-dark-100 hover:text-light-100;
 }
+@utility section-container {
+  @apply px-6 sm:px-10 lg:px-40;
+}
 
 :root {
   font-family: "Manrope", sans-serif;
