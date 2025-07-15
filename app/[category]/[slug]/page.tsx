@@ -1,4 +1,6 @@
 "use client";
+import Categories from "@/components/shared/Categories";
+import Button from "@/components/ui/Button";
 import { productData } from "@/constants";
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
@@ -60,8 +62,8 @@ const ProductDetail = () => {
               ))}
             </ul>
           </section>
-          {/* gallery */}
-          <section>
+          {/* gallery section*/}
+          <section className="grid grid-cols-1 gap-5 pt-22">
             {/* first image */}
             <picture>
               <source
@@ -77,6 +79,7 @@ const ProductDetail = () => {
                 alt={individualProduct.name}
                 height={1000}
                 width={1000}
+                className="w-full object-contain rounded-md"
               />
             </picture>
             {/* second image */}
@@ -94,6 +97,7 @@ const ProductDetail = () => {
                 alt={individualProduct.name}
                 height={1000}
                 width={1000}
+                className="w-full object-contain rounded-md"
               />
             </picture>
             {/* third image */}
@@ -111,8 +115,55 @@ const ProductDetail = () => {
                 alt={individualProduct.name}
                 height={1000}
                 width={1000}
+                className="w-full object-contain rounded-md"
               />
             </picture>
+          </section>
+
+          {/* other product section */}
+          <section className="py-22 text-center">
+            <h2 className="h4-bold pb-12">you may also like</h2>
+            <ul>
+              {individualProduct.others.map((product) => {
+                const otherProduct = productData.find(
+                  (related) => related.slug === product.slug
+                );
+                const otherProductCategory = otherProduct?.category;
+
+                return (
+                  <li className="text-center pb-18" key={product.slug}>
+                    <picture>
+                      <source
+                        media="(min-width:640px)"
+                        srcSet={product.image.tablet}
+                      />
+                      <source
+                        media="(min-width:1024px)"
+                        srcSet={product.image.desktop}
+                      />
+                      <Image
+                        src={product.image.mobile}
+                        alt={product.name}
+                        height={500}
+                        width={500}
+                        className="w-full object-cover rounded-md"
+                      />
+                    </picture>
+                    <h5 className="h5-bold py-10">{product.name}</h5>
+                    <Button
+                      label="see product"
+                      isLink
+                      route={`/${otherProductCategory}/${product.slug}`}
+                    />
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+
+          {/* categories section */}
+          <section className="text-center">
+            <Categories />
           </section>
         </main>
       )}
