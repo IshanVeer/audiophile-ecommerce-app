@@ -27,13 +27,14 @@ const ProductDetail = () => {
           <section className="flex flex-col gap-9 sm:gap-16 sm:flex-row sm:items-center">
             <picture className="w-full sm:w-1/2">
               <source
-                media="(min-width:640px)"
-                srcSet={individualProduct.image.tablet}
-              />
-              <source
                 media="(min-width:1024px)"
                 srcSet={individualProduct.image.desktop}
               />
+              <source
+                media="(min-width:640px)"
+                srcSet={individualProduct.image.tablet}
+              />
+
               <Image
                 src={individualProduct.image.mobile}
                 alt={individualProduct.name}
@@ -65,29 +66,34 @@ const ProductDetail = () => {
               </div>
             </div>
           </section>
+
+          {/* clubeed features and in th box section for large screen */}
+
+          <div className="lg:flex items-start gap-32 lg:pt-40">
+            <section className="py-22 lg:py-0 sm:py-28 lg:w-2/3">
+              <h2 className="h4-bold sm:h3-bold pb-9">Features</h2>
+              <div className="body text-dark-100/50">
+                {individualProduct.features}
+              </div>
+            </section>
+
+            {/* in the box section */}
+            <section className="sm:flex lg:flex-col gap-40 lg:gap-4 items-start lg:w-1/3">
+              <h2 className="h4-bold">in the box</h2>
+              <ul className="pt-9 sm:pt-0 flex flex-col gap-4">
+                {individualProduct.includes.map((include) => (
+                  <li className="flex items-center gap-5" key={include.item}>
+                    <p className="text-[15px] font-bold text-primary-500">{`${include.quantity}x`}</p>
+                    <p className="body text-dark-100/50">{include.item}</p>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          </div>
           {/* product features section */}
 
-          <section className="py-22 sm:py-28">
-            <h2 className="h4-bold sm:h3-bold pb-9">Features</h2>
-            <div className="body text-dark-100/50">
-              {individualProduct.features}
-            </div>
-          </section>
-
-          {/* in the box section */}
-          <section className="sm:flex gap-40 items-start">
-            <h2 className="h4-bold">in the box</h2>
-            <ul className="pt-9 sm:pt-0 flex flex-col gap-4">
-              {individualProduct.includes.map((include) => (
-                <li className="flex items-center gap-5" key={include.item}>
-                  <p className="text-[15px] font-bold text-primary-500">{`${include.quantity}x`}</p>
-                  <p className="body text-dark-100/50">{include.item}</p>
-                </li>
-              ))}
-            </ul>
-          </section>
           {/* gallery section*/}
-          <section className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-22 sm:pt-28">
+          <section className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-22 lg:pt-40 sm:pt-28">
             {/* first image */}
             <picture>
               <source
@@ -145,7 +151,7 @@ const ProductDetail = () => {
           </section>
 
           {/* other product section */}
-          <section className="py-22 sm:py-28 text-center">
+          <section className="py-22 sm:py-28 lg:py-40 text-center">
             <h2 className="h4-bold sm:h3-bold pb-12">you may also like</h2>
             <ul className="sm:flex items-center gap-3">
               {individualProduct.others.map((product) => {
@@ -158,13 +164,14 @@ const ProductDetail = () => {
                   <li className="text-center pb-18" key={product.slug}>
                     <picture>
                       <source
-                        media="(min-width:640px)"
-                        srcSet={product.image.tablet}
-                      />
-                      <source
                         media="(min-width:1024px)"
                         srcSet={product.image.desktop}
                       />
+                      <source
+                        media="(min-width:640px)"
+                        srcSet={product.image.tablet}
+                      />
+
                       <Image
                         src={product.image.mobile}
                         alt={product.name}
