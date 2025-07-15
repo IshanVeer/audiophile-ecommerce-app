@@ -14,9 +14,9 @@ const ProductDetail = () => {
   );
 
   return (
-    <div className="section-container py-4">
+    <div className="section-container pt-4 sm:pt-8">
       <button
-        className="body text-dark-100/50 pb-4"
+        className="body text-dark-100/50 pb-4 sm:pb-7"
         onClick={() => router.back()}
       >
         Go back
@@ -24,15 +24,26 @@ const ProductDetail = () => {
       {individualProduct && (
         <main>
           {/* product purrchase section */}
-          <section className="flex flex-col pb-22">
-            <Image
-              src={individualProduct.image.mobile}
-              alt={individualProduct.name}
-              height={1000}
-              width={1000}
-              className="pb-9"
-            />
-            <div>
+          <section className="flex flex-col gap-9 sm:gap-16 sm:flex-row sm:items-center">
+            <picture className="w-full sm:w-1/2">
+              <source
+                media="(min-width:640px)"
+                srcSet={individualProduct.image.tablet}
+              />
+              <source
+                media="(min-width:1024px)"
+                srcSet={individualProduct.image.desktop}
+              />
+              <Image
+                src={individualProduct.image.mobile}
+                alt={individualProduct.name}
+                height={1000}
+                width={1000}
+                className=" sm:pb-0 object-cover rounded-md"
+              />
+            </picture>
+
+            <div className="sm:w-1/2">
               {individualProduct.new && (
                 <p className="subtitle-overline text-primary-500">
                   NEW PRODUCT
@@ -56,17 +67,17 @@ const ProductDetail = () => {
           </section>
           {/* product features section */}
 
-          <section className="pb-22">
-            <h2 className="h4-bold pb-9">Features</h2>
+          <section className="py-22 sm:py-28">
+            <h2 className="h4-bold sm:h3-bold pb-9">Features</h2>
             <div className="body text-dark-100/50">
               {individualProduct.features}
             </div>
           </section>
 
           {/* in the box section */}
-          <section>
+          <section className="sm:flex gap-40 items-start">
             <h2 className="h4-bold">in the box</h2>
-            <ul className="pt-9 flex flex-col gap-4">
+            <ul className="pt-9 sm:pt-0 flex flex-col gap-4">
               {individualProduct.includes.map((include) => (
                 <li className="flex items-center gap-5" key={include.item}>
                   <p className="text-[15px] font-bold text-primary-500">{`${include.quantity}x`}</p>
@@ -76,7 +87,7 @@ const ProductDetail = () => {
             </ul>
           </section>
           {/* gallery section*/}
-          <section className="grid grid-cols-1 gap-5 pt-22">
+          <section className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-22 sm:pt-28">
             {/* first image */}
             <picture>
               <source
@@ -92,11 +103,11 @@ const ProductDetail = () => {
                 alt={individualProduct.name}
                 height={1000}
                 width={1000}
-                className="w-full object-contain rounded-md"
+                className="w-full object-cover rounded-md"
               />
             </picture>
             {/* second image */}
-            <picture>
+            <picture className="sm:order-3">
               <source
                 media="(min-width:1024px)"
                 srcSet={individualProduct.gallery.second.desktop}
@@ -110,11 +121,11 @@ const ProductDetail = () => {
                 alt={individualProduct.name}
                 height={1000}
                 width={1000}
-                className="w-full object-contain rounded-md"
+                className="w-full object-cover rounded-md"
               />
             </picture>
             {/* third image */}
-            <picture>
+            <picture className="sm:order-2 sm:row-span-2 sm:h-full overflow-hidden">
               <source
                 media="(min-width:1024px)"
                 srcSet={individualProduct.gallery.third.desktop}
@@ -128,15 +139,15 @@ const ProductDetail = () => {
                 alt={individualProduct.name}
                 height={1000}
                 width={1000}
-                className="w-full object-contain rounded-md"
+                className="w-full sm:h-full object-cover rounded-md"
               />
             </picture>
           </section>
 
           {/* other product section */}
-          <section className="py-22 text-center">
-            <h2 className="h4-bold pb-12">you may also like</h2>
-            <ul>
+          <section className="py-22 sm:py-28 text-center">
+            <h2 className="h4-bold sm:h3-bold pb-12">you may also like</h2>
+            <ul className="sm:flex items-center gap-3">
               {individualProduct.others.map((product) => {
                 const otherProduct = productData.find(
                   (related) => related.slug === product.slug
