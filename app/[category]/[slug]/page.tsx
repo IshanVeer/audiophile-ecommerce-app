@@ -14,8 +14,13 @@ const ProductDetail = () => {
   );
 
   return (
-    <div className="section-container">
-      <button onClick={() => router.back()}>Go back</button>
+    <div className="section-container py-4">
+      <button
+        className="body text-dark-100/50 pb-4"
+        onClick={() => router.back()}
+      >
+        Go back
+      </button>
       {individualProduct && (
         <main>
           {/* product purrchase section */}
