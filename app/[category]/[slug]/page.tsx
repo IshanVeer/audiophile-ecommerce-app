@@ -43,7 +43,15 @@ const ProductDetail = () => {
                 {individualProduct.description}
               </p>
               <p className="h6-bold py-9">{`$${individualProduct.price}`}</p>
-              <div>buttons</div>
+              {/* button */}
+              <div className="flex gap-4">
+                <div className="flex justify-around text-dark-100/25 bg-light-300 w-[120px] items-center">
+                  <button>-</button>
+                  <p className="text-dark-100 subtitle">1</p>
+                  <button>+</button>
+                </div>
+                <Button label="Add to cart" />
+              </div>
             </div>
           </section>
           {/* product features section */}
