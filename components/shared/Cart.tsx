@@ -26,7 +26,11 @@ const Cart = () => {
           alt="cart"
           height={25}
           width={25}
+          className="relative"
         />
+        <div className="bg-primary-500 absolute top-10 right-38 rounded-full text-[10px] font-bold px-1.75 py-0.5">
+          {cart.length}
+        </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent className=" absolute top-25 left-6 sm:left-90 sm:top-25 lg:-left-90 lg:top-20   w-[377px] px-7 py-9">
         <div className="flex justify-between">
