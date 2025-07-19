@@ -21,15 +21,16 @@ const Cart = () => {
     <DropdownMenu>
       <DropdownMenuTrigger className="focus:outline-none focus:border-none cursor-pointer">
         {" "}
-        <Image
-          src="/assets/shared/desktop/icon-cart.svg"
-          alt="cart"
-          height={25}
-          width={25}
-          className="relative"
-        />
-        <div className="bg-primary-500 absolute top-10 right-38 rounded-full text-[10px] font-bold px-1.75 py-0.5">
-          {cart.length}
+        <div className="relative">
+          <Image
+            src="/assets/shared/desktop/icon-cart.svg"
+            alt="cart"
+            height={25}
+            width={25}
+          />
+          <div className="bg-primary-500 text-light-100 absolute -top-2 -right-2 rounded-full text-[10px] font-bold px-1.75 py-0.5">
+            {cart.length}
+          </div>
         </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent className=" absolute top-25 left-6 sm:left-90 sm:top-25 lg:-left-90 lg:top-20   w-[377px] px-7 py-9">
