@@ -1,6 +1,6 @@
 export const productData = [
   {
-    id: 1,
+    id: "1",
     slug: "yx1-earphones",
     name: "YX1 Wireless Earphones",
     image: {
@@ -93,7 +93,7 @@ export const productData = [
     ],
   },
   {
-    id: 2,
+    id: "2",
     slug: "xx59-headphones",
     name: "XX59 Headphones",
     image: {
@@ -182,7 +182,7 @@ export const productData = [
     ],
   },
   {
-    id: 3,
+    id: "3",
     slug: "xx99-mark-one-headphones",
     name: "XX99 Mark I Headphones",
     image: {
@@ -283,7 +283,7 @@ export const productData = [
     ],
   },
   {
-    id: 4,
+    id: "4",
     slug: "xx99-mark-two-headphones",
     name: "XX99 Mark II Headphones",
     image: {
@@ -388,7 +388,7 @@ export const productData = [
     ],
   },
   {
-    id: 5,
+    id: "5",
     slug: "zx7-speaker",
     name: "ZX7 Speaker",
     image: {
@@ -481,7 +481,7 @@ export const productData = [
     ],
   },
   {
-    id: 6,
+    id: "6",
     slug: "zx9-speaker",
     name: "ZX9 Speaker",
     image: {

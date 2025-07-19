@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/drawer";
 import { categoryData } from "@/constants";
 import Link from "next/link";
+import Cart from "./Cart";
 
 const MobileNav = () => {
   return (
@@ -70,12 +71,7 @@ const MobileNav = () => {
           />
         </Link>
       </div>
-      <Image
-        src="/assets/shared/desktop/icon-cart.svg"
-        height={25}
-        width={25}
-        alt="cart"
-      />
+      <Cart />
     </nav>
   );
 };

@@ -2,6 +2,7 @@ import { productData } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import Cart from "./Cart";
 
 const Navbar = () => {
   const categories = Array.from(
@@ -32,12 +33,7 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <Image
-          src="/assets/shared/desktop/icon-cart.svg"
-          alt="cart"
-          height={25}
-          width={25}
-        />
+        <Cart />
       </div>
     </nav>
   );

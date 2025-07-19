@@ -7,6 +7,8 @@ interface ButtonProps {
   isLink?: boolean;
   route?: string;
   className?: string;
+  action?: string;
+  addToCartHandler?: () => void;
 }
 
 const Button = ({
@@ -15,10 +17,19 @@ const Button = ({
   label,
   isLink = false,
   route,
+  action,
+  addToCartHandler,
 }: ButtonProps) => {
-  const buttonClass = `${className} uppercase text-[13px] font-bold leading-[18px] cursor-pointer px-9 py-3.5 transition duration-150 ${
+  const buttonClass = `uppercase text-[13px] inline-block text-center font-bold leading-[18px] cursor-pointer px-9 py-3.5 transition duration-150  ${
     buttonStyle === "secondary" ? "button-secondary" : "button-primary"
-  }`;
+  } ${className} `;
+
+  const clickHandler = () => {
+    switch (action) {
+      case "add-to-cart":
+        addToCartHandler?.();
+    }
+  };
 
   return (
     <>
@@ -27,7 +38,9 @@ const Button = ({
           {label}
         </Link>
       ) : (
-        <button className={buttonClass}>{label}</button>
+        <button onClick={clickHandler} className={buttonClass}>
+          {label}
+        </button>
       )}
     </>
   );

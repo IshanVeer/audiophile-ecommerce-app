@@ -2,16 +2,40 @@
 import Categories from "@/components/shared/Categories";
 import Button from "@/components/ui/Button";
 import { productData } from "@/constants";
+import { useCartContext } from "@/context/CartProvider";
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
-import React from "react";
+import React, { useState } from "react";
 
 const ProductDetail = () => {
   const { slug } = useParams();
+  const [itemQuantity, setItemQuantity] = useState(1);
   const router = useRouter();
+  const { addToCart } = useCartContext();
   const individualProduct = productData.find(
     (product) => product.slug === slug
   );
+
+  const itemIncrement = () => {
+    setItemQuantity((q) => q + 1);
+  };
+
+  const itemDecrement = () => {
+    setItemQuantity((q) => (q > 1 ? q - 1 : 1));
+  };
+
+  const addToCartHandler = () => {
+    if (individualProduct) {
+      addToCart({
+        id: individualProduct.id,
+        name: individualProduct.name,
+        image: individualProduct.image,
+        price: individualProduct.price,
+        quantity: itemQuantity,
+      });
+    }
+    setItemQuantity(1);
+  };
 
   return (
     <div className="section-container pt-4 sm:pt-8">
@@ -58,11 +82,15 @@ const ProductDetail = () => {
               {/* button */}
               <div className="flex gap-4">
                 <div className="flex justify-around text-dark-100/25 bg-light-300 w-[120px] items-center">
-                  <button>-</button>
-                  <p className="text-dark-100 subtitle">1</p>
-                  <button>+</button>
+                  <button onClick={itemDecrement}>-</button>
+                  <p className="text-dark-100 subtitle">{itemQuantity}</p>
+                  <button onClick={itemIncrement}>+</button>
                 </div>
-                <Button label="Add to cart" />
+                <Button
+                  addToCartHandler={addToCartHandler}
+                  action="add-to-cart"
+                  label="Add to cart"
+                />
               </div>
             </div>
           </section>
