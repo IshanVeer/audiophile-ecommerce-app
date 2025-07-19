@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useCartContext } from "@/context/CartProvider";
 import Button from "../ui/Button";
+import { shortenName } from "@/lib/utils";
 
 const Cart = () => {
   const { cart } = useCartContext();
@@ -34,22 +35,30 @@ const Cart = () => {
         </div>
         <ul className="pt-10">
           {cart.map((item) => (
-            <li key={item.id} className="flex items-center gap-4">
-              <Image
-                src={item.image.desktop}
-                alt={item.name}
-                width={100}
-                height={100}
-                className="w-1/4 rounded-md"
-              />
+            <li
+              key={item.id}
+              className="flex justify-between pb-8 items-center gap-4"
+            >
+              <div className="flex w-2/3 items-center gap-4">
+                <Image
+                  src={item.image.desktop}
+                  alt={item.name}
+                  width={100}
+                  height={100}
+                  className="w-1/3 rounded-md"
+                />
 
-              <div>
-                <p className="font-bold text-[15px] uppercase">{item.name}</p>
-                <p className="text-dark-100/50 text-[14px] font-bold">
-                  {`$${item.price}`}
-                </p>
+                <div className="w-1/2">
+                  <p className="font-bold text-[15px] uppercase">
+                    {shortenName(item.name)}
+                  </p>
+                  <p className="text-dark-100/50 text-[14px] font-bold">
+                    {`$${item.price}`}
+                  </p>
+                </div>
               </div>
-              <div className="flex justify-around text-dark-100/25 bg-light-300 w-[120px] items-center">
+
+              <div className="flex w-[96px] py-1 justify-around text-dark-100/25 bg-light-300  items-center">
                 <button>-</button>
                 <p className="text-dark-100 subtitle">{item.quantity}</p>
                 <button>+</button>
