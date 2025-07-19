@@ -12,7 +12,8 @@ import Button from "../ui/Button";
 import { shortenName } from "@/lib/utils";
 
 const Cart = () => {
-  const { cart } = useCartContext();
+  const { cart, increaseCartItem, decreaseCartItem, removeAllItems } =
+    useCartContext();
   const totalPrice = cart.reduce(
     (acc, item) => acc + item.price * item.quantity,
     0
@@ -36,7 +37,10 @@ const Cart = () => {
       <DropdownMenuContent className=" absolute top-25 left-6 sm:left-90 sm:top-25 lg:-left-90 lg:top-20   w-[377px] px-7 py-9">
         <div className="flex justify-between">
           <h5 className="h6-bold">Cart ({cart.length}) </h5>
-          <button className="text-dark-100/50 body border-b cursor-pointer hover:text-dark-100/55 transition duration-150">
+          <button
+            onClick={removeAllItems}
+            className="text-dark-100/50 body border-b cursor-pointer hover:text-dark-100/55 transition duration-150"
+          >
             Remove All
           </button>
         </div>
@@ -66,9 +70,19 @@ const Cart = () => {
               </div>
 
               <div className="flex w-[96px] py-1 justify-around text-dark-100/25 bg-light-300  items-center">
-                <button className="cursor-pointer">-</button>
+                <button
+                  onClick={() => decreaseCartItem(item.id)}
+                  className="cursor-pointer"
+                >
+                  -
+                </button>
                 <p className="text-dark-100 subtitle">{item.quantity}</p>
-                <button className="cursor-pointer">+</button>
+                <button
+                  onClick={() => increaseCartItem(item.id)}
+                  className="cursor-pointer"
+                >
+                  +
+                </button>
               </div>
             </li>
           ))}

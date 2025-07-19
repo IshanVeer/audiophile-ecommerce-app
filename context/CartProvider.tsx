@@ -5,6 +5,9 @@ import React, { createContext, useContext, useState } from "react";
 interface CartContextType {
   cart: CartItemProps[];
   addToCart: (incomingItem: CartItemProps) => void;
+  increaseCartItem: (id: string) => void;
+  decreaseCartItem: (id: string) => void;
+  removeAllItems: () => void;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -41,12 +44,39 @@ const CartProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   // increase cart item
+  const increaseCartItem = (id: string) => {
+    setCart((prev) =>
+      prev.map((item) =>
+        item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+      )
+    );
+  };
 
   // decrease cart item and if 1 then remove it
 
+  const decreaseCartItem = (id: string) => {
+    setCart((prev) =>
+      prev
+        .map((item) =>
+          item.id === id ? { ...item, quantity: item.quantity - 1 } : item
+        )
+        .filter((item) => item.quantity > 0)
+    );
+  };
+
   // remove all cart items
 
-  const value = { cart, addToCart };
+  const removeAllItems = () => {
+    setCart([]);
+  };
+
+  const value = {
+    cart,
+    addToCart,
+    removeAllItems,
+    increaseCartItem,
+    decreaseCartItem,
+  };
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
 
