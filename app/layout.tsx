@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/shared/Navbar";
-import Footer from "@/components/shared/Footer";
-import BrandDescription from "@/components/shared/BrandDescription";
-import MobileNav from "@/components/shared/MobileNav";
 import CartProvider from "@/context/CartProvider";
 
 const manrope = Manrope({
@@ -25,13 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={` ${manrope.variable} antialiased`}>
-        <CartProvider>
-          <Navbar />
-          <MobileNav />
-          <section>{children}</section>
-          <BrandDescription />
-          <Footer />
-        </CartProvider>
+        <CartProvider>{children}</CartProvider>
       </body>
     </html>
   );
