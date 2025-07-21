@@ -9,11 +9,13 @@ interface ButtonProps {
   className?: string;
   action?: string;
   addToCartHandler?: () => void;
+  typeButton?: "button" | "submit" | "reset";
 }
 
 const Button = ({
   className,
   buttonStyle,
+  typeButton,
   label,
   isLink = false,
   route,
@@ -38,7 +40,11 @@ const Button = ({
           {label}
         </Link>
       ) : (
-        <button onClick={clickHandler} className={buttonClass}>
+        <button
+          type={typeButton || "button"}
+          onClick={clickHandler}
+          className={buttonClass}
+        >
           {label}
         </button>
       )}

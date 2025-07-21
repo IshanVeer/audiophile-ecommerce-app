@@ -1,9 +1,21 @@
 "use client";
+import { useCartContext } from "@/context/CartProvider";
+import { shortenName } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 import React from "react";
+import Image from "next/image";
+import Button from "@/components/ui/Button";
 
 const CheckoutPage = () => {
   const router = useRouter();
+  const { cart } = useCartContext();
+  const totalPrice = cart.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0
+  );
+  const vatPrice = (totalPrice * 20) / 100;
+  const shippingPrice = 50;
+  const grandTotal = totalPrice + shippingPrice + vatPrice;
   return (
     <div className=" bg-light-200 pt-6 pb-24">
       {" "}
@@ -14,14 +26,16 @@ const CheckoutPage = () => {
         Go back
       </button>
       {/* form container */}
-      <form action="submit ">
+      <form className="flex flex-col gap-8" action="submit ">
         {/* input containers */}
-        <div className="mx-8 section-container rounded-md bg-light-100 pt-9 pb-8">
-          <h4 className="h4-bold">Checkout</h4>
+        <div className="mx-8 section-container rounded-md bg-light-100 pt-8 pb-8">
+          <h4 className="h4-bold sm:h3-bold">Checkout</h4>
+          <p className="subtitle text-primary-500 pt-10 sm:pt-13 pb-7">
+            billing details
+          </p>
 
           {/* billing details */}
-          <div className="pt-10">
-            <p className="subtitle text-primary-500 pb-7">billing details</p>
+          <div className="sm:grid grid-cols-2 gap-x-4">
             {/* name */}
             <div className="flex flex-col gap-3 pb-7">
               <label
@@ -72,10 +86,12 @@ const CheckoutPage = () => {
             </div>
           </div>
           {/* shipping */}
-          <div className="pt-10">
-            <p className="subtitle text-primary-500 pb-7">shipping info</p>
+          <p className="subtitle text-primary-500 pt-10 sm:pt-15 pb-7">
+            shipping info
+          </p>
+          <div className="sm:grid grid-cols-2 gap-x-4">
             {/* address */}
-            <div className="flex flex-col gap-3 pb-7">
+            <div className="flex flex-col col-span-2 gap-3 pb-7">
               <label
                 className="text-xs font-bold text-dark-100 "
                 htmlFor="address"
@@ -140,14 +156,16 @@ const CheckoutPage = () => {
             </div>
           </div>
           {/* payment details */}
-          <div className="pt-10">
-            <p className="subtitle text-primary-500 pb-7">payment details</p>
-            {/* payment info */}
-            <fieldset className="flex flex-col gap-4 pb-7">
-              <legend className="text-xs font-bold capitalize text-dark-100 pb-3">
-                payment method
-              </legend>
+          <p className="subtitle text-primary-500 pt-10 sm:pt-15 pb-7">
+            payment details
+          </p>
 
+          {/* payment info */}
+          <fieldset className="sm:grid sm:grid-cols-2 pb-7">
+            <p className="text-xs  font-bold capitalize text-dark-100 pb-3">
+              payment method
+            </p>
+            <div className="flex  flex-col gap-4 ">
               <label className="flex text-sm font-bold items-center gap-3 border py-3.75 px-4 rounded-md">
                 <input
                   type="radio"
@@ -169,10 +187,12 @@ const CheckoutPage = () => {
                   Cash on Delivery
                 </span>
               </label>
-            </fieldset>
+            </div>
+          </fieldset>
 
-            {/* e-money number */}
-            <div className="flex flex-col gap-3 pb-7">
+          {/* e-money number */}
+          <div className="sm:flex items-start gap-4">
+            <div className="flex flex-col gap-3 pb-7 w-full">
               <label
                 className="text-xs font-bold capitalize text-dark-100 "
                 htmlFor="e-money"
@@ -187,7 +207,7 @@ const CheckoutPage = () => {
               />
             </div>
             {/* e-money pin */}
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-3 w-full">
               <label
                 className="text-xs font-bold capitalize text-dark-100 "
                 htmlFor="e-pin"
@@ -205,9 +225,61 @@ const CheckoutPage = () => {
         </div>
 
         {/* summary container */}
-        <div></div>
+        <div className="mx-8 section-container rounded-md bg-light-100 pt-9 pb-8">
+          <h4 className="h4-bold">Summmary</h4>
+          <ul className="pt-10">
+            {cart.map((item) => (
+              <li
+                key={item.id}
+                className="flex justify-between pb-8 items-center gap-4"
+              >
+                <div className="flex w-2/3 items-center gap-4">
+                  <Image
+                    src={item.image.desktop}
+                    alt={item.name}
+                    width={100}
+                    height={100}
+                    className="w-1/3 rounded-md"
+                  />
+
+                  <div className="w-1/2">
+                    <p className="font-bold text-[15px] uppercase">
+                      {shortenName(item.name)}
+                    </p>
+                    <p className="text-dark-100/50 text-[14px] font-bold">
+                      {`$${item.price}`}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center text-[15px] font-bold text-dark-100/50">
+                  <p>x</p>
+                  <p>{item.quantity}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center justify-between">
+              <p className="body uppercase text-dark-100/50">total</p>
+              <p className="h6-bold">{`$${totalPrice}`}</p>
+            </div>
+            <div className="flex items-center justify-between">
+              <p className="body uppercase text-dark-100/50">shipping</p>
+              <p className="h6-bold">{`$${shippingPrice}`}</p>
+            </div>
+            <div className="flex items-center justify-between">
+              <p className="body uppercase text-dark-100/50">VAT (INCLUDED)</p>
+              <p className="h6-bold">{`$${vatPrice}`}</p>
+            </div>
+            <div className="flex items-center justify-between py-4">
+              <p className="body uppercase text-dark-100/50">grand total</p>
+              <p className="h6-bold text-primary-500">{`$${grandTotal}`}</p>
+            </div>
+            <Button label="Continue & pay" typeButton="submit" />
+          </div>
+        </div>
       </form>
-      {/* checkout summary */}
     </div>
   );
 };
