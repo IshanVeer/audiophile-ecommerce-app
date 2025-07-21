@@ -35,7 +35,7 @@ const Cart = () => {
           </div>
         </div>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className=" absolute top-25 left-6 sm:left-90 sm:top-25 lg:-left-90 lg:top-20   w-[377px] px-7 py-9">
+      <DropdownMenuContent className=" absolute top-10 lg:top-18 left-[95.5%] sm:left-[97%] -translate-x-[95.5%] sm:-translate-x-[97%]  w-[90vw] max-w-[377px] px-7 py-9">
         {cart.length > 0 ? (
           <div>
             <div className="flex justify-between">

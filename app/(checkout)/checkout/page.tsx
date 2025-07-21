@@ -17,18 +17,21 @@ const CheckoutPage = () => {
   const shippingPrice = 50;
   const grandTotal = totalPrice + shippingPrice + vatPrice;
   return (
-    <div className=" bg-light-200 pt-6 pb-24">
+    <div className=" bg-light-200 pt-6 sm:pt-14 lg:pt-21 pb-24 sm:pb-29 lg:pb-35">
       {" "}
       <button
-        className="body text-dark-100/50 pb-4 pl-8 sm:pb-7"
+        className="body text-dark-100/50 pb-4 pl-8 sm:pl-10 lg:pl-41 sm:pb-7"
         onClick={() => router.back()}
       >
         Go back
       </button>
       {/* form container */}
-      <form className="flex flex-col gap-8" action="submit ">
+      <form
+        className="mx-8 sm:mx-10 lg:mx-41 flex flex-col lg:flex-row gap-8"
+        action="submit "
+      >
         {/* input containers */}
-        <div className="mx-8 section-container rounded-md bg-light-100 pt-8 pb-8">
+        <div className="px-8 sm:px-10 lg:w-2/3 rounded-md bg-light-100 pt-8 pb-0.5">
           <h4 className="h4-bold sm:h3-bold">Checkout</h4>
           <p className="subtitle text-primary-500 pt-10 sm:pt-13 pb-7">
             billing details
@@ -225,7 +228,7 @@ const CheckoutPage = () => {
         </div>
 
         {/* summary container */}
-        <div className="mx-8 section-container rounded-md bg-light-100 pt-9 pb-8">
+        <div className=" px-8 sm:px-10 lg:w-1/3 h-fit rounded-md bg-light-100 pt-9 pb-8">
           <h4 className="h4-bold">Summmary</h4>
           <ul className="pt-10">
             {cart.map((item) => (
