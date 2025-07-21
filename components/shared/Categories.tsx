@@ -10,7 +10,7 @@ const Categories = () => {
       <ul className="flex flex-col sm:flex-row gap-12 sm:gap-4 lg:gap-8">
         {categoryData.map((category) => (
           <li
-            className="bg-light-200 pt-23 pb-6 rounded-md relative w-full "
+            className="bg-light-400 pt-23 pb-6 rounded-md relative w-full "
             key={category.name}
           >
             <Image

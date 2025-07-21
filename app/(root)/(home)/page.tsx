@@ -122,7 +122,7 @@ export default function Home() {
             width={500}
             className="rounded-md sm:w-1/2 max-lg:hidden"
           />
-          <div className="bg-light-200 flex items-center py-14 px-6 rounded-md sm:w-1/2">
+          <div className="bg-light-400 flex items-center py-14 px-6 rounded-md sm:w-1/2">
             <div>
               <h4 className="h4-bold mb-8">YX1 EARPHONES</h4>
               <Button

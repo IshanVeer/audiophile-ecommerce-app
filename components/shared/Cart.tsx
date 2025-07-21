@@ -94,7 +94,12 @@ const Cart = () => {
               <p className="body uppercase text-dark-100/50">Total</p>
               <p className="h6-bold">{`$${totalPrice}`}</p>
             </div>
-            <Button className="w-full" label="checkout" isLink route="/" />
+            <Button
+              className="w-full"
+              label="checkout"
+              isLink
+              route="/checkout"
+            />
           </div>
         ) : (
           <EmptyCart />
