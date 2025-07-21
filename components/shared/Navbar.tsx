@@ -1,10 +1,13 @@
+"use client";
 import { productData } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Cart from "./Cart";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
+  const pathName = usePathname();
   const categories = Array.from(
     new Set(productData.map((product) => product.category))
   );
@@ -33,7 +36,7 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <Cart />
+        {pathName !== "/checkout" && <Cart />}
       </div>
     </nav>
   );

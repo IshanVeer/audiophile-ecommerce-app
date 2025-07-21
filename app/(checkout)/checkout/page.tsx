@@ -20,7 +20,7 @@ const CheckoutPage = () => {
     <div className=" bg-light-200 pt-6 sm:pt-14 lg:pt-21 pb-24 sm:pb-29 lg:pb-35">
       {" "}
       <button
-        className="body text-dark-100/50 pb-4 pl-8 sm:pl-10 lg:pl-41 sm:pb-7"
+        className="body text-dark-100/50 pb-4 pl-8 sm:pl-10 lg:pl-41 sm:pb-7 cursor-pointer"
         onClick={() => router.back()}
       >
         Go back

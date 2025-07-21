@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import {
@@ -9,8 +10,10 @@ import {
 import { categoryData } from "@/constants";
 import Link from "next/link";
 import Cart from "./Cart";
+import { usePathname } from "next/navigation";
 
 const MobileNav = () => {
+  const pathName = usePathname();
   return (
     <nav className="lg:hidden bg-dark-100 flex justify-between px-6 py-6 border-b border-light-100/10">
       <div className="flex gap-6">
@@ -71,7 +74,7 @@ const MobileNav = () => {
           />
         </Link>
       </div>
-      <Cart />
+      {pathName !== "/checkout" && <Cart />}
     </nav>
   );
 };

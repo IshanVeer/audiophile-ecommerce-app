@@ -40,7 +40,7 @@ const ProductDetail = () => {
   return (
     <div className="section-container pt-4 sm:pt-8">
       <button
-        className="body text-dark-100/50 pb-4 sm:pb-7"
+        className="body text-dark-100/50 pb-4 sm:pb-7 cursor-pointer"
         onClick={() => router.back()}
       >
         Go back

@@ -15,6 +15,7 @@ import EmptyCart from "./EmptyCart";
 const Cart = () => {
   const { cart, increaseCartItem, decreaseCartItem, removeAllItems } =
     useCartContext();
+
   const totalPrice = cart.reduce(
     (acc, item) => acc + item.price * item.quantity,
     0
