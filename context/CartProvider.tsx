@@ -1,6 +1,6 @@
 "use client";
 import { CartItemProps } from "@/types";
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 interface CartContextType {
   cart: CartItemProps[];
@@ -14,8 +14,22 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 
 const CartProvider = ({ children }: { children: React.ReactNode }) => {
   // initialise cart state
-  const [cart, setCart] = useState<CartItemProps[]>([]);
+  const [cart, setCart] = useState<CartItemProps[]>(() => {
+    try {
+      if (typeof window !== undefined) {
+        const savedCart = localStorage.getItem("cart");
+        return savedCart ? JSON.parse(savedCart) : [];
+      }
+    } catch (error) {
+      console.log("Failed to load cart from local storage", error);
+    }
+    return [];
+  });
   console.log(cart, " cart");
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   // add to cart
 
