@@ -2,12 +2,24 @@
 import { useCartContext } from "@/context/CartProvider";
 import { shortenName } from "@/lib/utils";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
 
 const CheckoutPage = () => {
   const router = useRouter();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    address: "",
+    zip: "",
+    city: "",
+    country: "",
+    paymentMethod: "e-money",
+    eNumber: "",
+    ePin: "",
+  });
   const { cart } = useCartContext();
   const totalPrice = cart.reduce(
     (acc, item) => acc + item.price * item.quantity,
@@ -16,6 +28,20 @@ const CheckoutPage = () => {
   const vatPrice = (totalPrice * 20) / 100;
   const shippingPrice = 50;
   const grandTotal = totalPrice + shippingPrice + vatPrice;
+
+  const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const formSubmitHandler = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log(formData, "form submitted");
+  };
   return (
     <div className=" bg-light-200 pt-6 sm:pt-14 lg:pt-21 pb-24 sm:pb-29 lg:pb-35">
       {" "}
@@ -27,8 +53,8 @@ const CheckoutPage = () => {
       </button>
       {/* form container */}
       <form
+        onSubmit={formSubmitHandler}
         className="mx-8 sm:mx-10 lg:mx-41 flex flex-col lg:flex-row gap-8"
-        action="submit "
       >
         {/* input containers */}
         <div className="px-8 sm:px-10 lg:w-2/3 rounded-md bg-light-100 pt-8 pb-0.5">
@@ -53,6 +79,8 @@ const CheckoutPage = () => {
                 id="name"
                 name="name"
                 type="text"
+                value={formData.name}
+                onChange={inputHandler}
               />
             </div>
             {/* email */}
@@ -67,8 +95,10 @@ const CheckoutPage = () => {
                 className="py-3.75 px-4 border rounded-md placeholder:font-bold placeholder:text-sm placeholder:text-dark-100/40 border-[#cfcfcf]"
                 placeholder="alexei@mail.com"
                 id="email"
-                name="email address"
+                name="email"
                 type="email"
+                value={formData.email}
+                onChange={inputHandler}
               />
             </div>
             {/* phone */}
@@ -83,8 +113,10 @@ const CheckoutPage = () => {
                 className="py-3.75 px-4 border rounded-md placeholder:font-bold placeholder:text-sm placeholder:text-dark-100/40 border-[#cfcfcf]"
                 placeholder="+1 202-555-0136"
                 id="phone-number"
-                name="phone number"
+                name="phone"
                 type="number"
+                value={formData.phone}
+                onChange={inputHandler}
               />
             </div>
           </div>
@@ -107,6 +139,8 @@ const CheckoutPage = () => {
                 id="address"
                 name="address"
                 type="text"
+                value={formData.address}
+                onChange={inputHandler}
               />
             </div>
             {/* zip code */}
@@ -121,8 +155,10 @@ const CheckoutPage = () => {
                 className="py-3.75 px-4 border rounded-md placeholder:font-bold placeholder:text-sm placeholder:text-dark-100/40 border-[#cfcfcf]"
                 placeholder="10001"
                 id="zip-code"
-                name="zip code"
+                name="zip"
                 type="number"
+                value={formData.zip}
+                onChange={inputHandler}
               />
             </div>
             {/* city */}
@@ -139,6 +175,8 @@ const CheckoutPage = () => {
                 id="city"
                 name="city"
                 type="text"
+                value={formData.city}
+                onChange={inputHandler}
               />
             </div>
             {/* country */}
@@ -155,6 +193,8 @@ const CheckoutPage = () => {
                 id="country"
                 name="country"
                 type="text"
+                value={formData.country}
+                onChange={inputHandler}
               />
             </div>
           </div>
@@ -172,9 +212,11 @@ const CheckoutPage = () => {
               <label className="flex text-sm font-bold items-center gap-3 border py-3.75 px-4 rounded-md">
                 <input
                   type="radio"
-                  name="payment-method"
-                  value="e-Money"
+                  name="paymentMethod"
+                  value="e-money"
                   className="accent-primary-500"
+                  onChange={inputHandler}
+                  checked={formData.paymentMethod === "e-money"}
                 />
                 <span className="text-sm font-bold text-dark-100">e-Money</span>
               </label>
@@ -182,9 +224,11 @@ const CheckoutPage = () => {
               <label className="flex text-sm font-bold items-center gap-3 border py-3.75 px-4 rounded-md">
                 <input
                   type="radio"
-                  name="payment-method"
-                  value="Cash on Delivery"
+                  name="paymentMethod"
+                  value="cash-on-delivery"
                   className="accent-primary-500"
+                  onChange={inputHandler}
+                  checked={formData.paymentMethod === "cash-on-delivery"}
                 />
                 <span className="text-sm font-bold text-dark-100">
                   Cash on Delivery
@@ -194,37 +238,45 @@ const CheckoutPage = () => {
           </fieldset>
 
           {/* e-money number */}
-          <div className="sm:flex items-start gap-4">
-            <div className="flex flex-col gap-3 pb-7 w-full">
-              <label
-                className="text-xs font-bold capitalize text-dark-100 "
-                htmlFor="e-money"
-              >
-                e-Money Number
-              </label>
-              <input
-                className="py-3.75 px-4 border rounded-md placeholder:font-bold placeholder:text-sm placeholder:text-dark-100/40 border-[#cfcfcf]"
-                placeholder="238521993"
-                id="e-money"
-                type="number"
-              />
+          {formData.paymentMethod === "e-money" && (
+            <div className="sm:flex items-start gap-4">
+              <div className="flex flex-col gap-3 pb-7 w-full">
+                <label
+                  className="text-xs font-bold capitalize text-dark-100 "
+                  htmlFor="e-money"
+                >
+                  e-Money Number
+                </label>
+                <input
+                  className="py-3.75 px-4 border rounded-md placeholder:font-bold placeholder:text-sm placeholder:text-dark-100/40 border-[#cfcfcf]"
+                  placeholder="238521993"
+                  name="eNumber"
+                  id="e-money"
+                  type="number"
+                  onChange={inputHandler}
+                  value={formData.eNumber}
+                />
+              </div>
+              {/* e-money pin */}
+              <div className="flex flex-col gap-3 w-full">
+                <label
+                  className="text-xs font-bold capitalize text-dark-100 "
+                  htmlFor="e-pin"
+                >
+                  e-Money PIN
+                </label>
+                <input
+                  className="py-3.75 px-4 border rounded-md placeholder:font-bold placeholder:text-sm placeholder:text-dark-100/40 border-[#cfcfcf]"
+                  placeholder="6891"
+                  name="ePin"
+                  id="e-pin"
+                  type="number"
+                  onChange={inputHandler}
+                  value={formData.ePin}
+                />
+              </div>
             </div>
-            {/* e-money pin */}
-            <div className="flex flex-col gap-3 w-full">
-              <label
-                className="text-xs font-bold capitalize text-dark-100 "
-                htmlFor="e-pin"
-              >
-                e-Money PIN
-              </label>
-              <input
-                className="py-3.75 px-4 border rounded-md placeholder:font-bold placeholder:text-sm placeholder:text-dark-100/40 border-[#cfcfcf]"
-                placeholder="6891"
-                id="e-pin"
-                type="number"
-              />
-            </div>
-          </div>
+          )}
         </div>
 
         {/* summary container */}
