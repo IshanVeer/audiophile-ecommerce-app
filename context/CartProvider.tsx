@@ -16,7 +16,7 @@ const CartProvider = ({ children }: { children: React.ReactNode }) => {
   // initialise cart state
   const [cart, setCart] = useState<CartItemProps[]>(() => {
     try {
-      if (typeof window !== undefined) {
+      if (typeof window !== "undefined") {
         const savedCart = localStorage.getItem("cart");
         return savedCart ? JSON.parse(savedCart) : [];
       }

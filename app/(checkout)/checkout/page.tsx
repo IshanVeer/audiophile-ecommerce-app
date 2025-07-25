@@ -40,7 +40,6 @@ const CheckoutPage = () => {
 
   const formSubmitHandler = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(formData, "form submitted");
   };
   return (
     <div className=" bg-light-200 pt-6 sm:pt-14 lg:pt-21 pb-24 sm:pb-29 lg:pb-35">
