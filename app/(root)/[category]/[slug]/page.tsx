@@ -6,6 +6,7 @@ import { useCartContext } from "@/context/CartProvider";
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
 import React, { useState } from "react";
+import { easeOut, motion } from "motion/react";
 
 const ProductDetail = () => {
   const { slug } = useParams();
@@ -49,7 +50,12 @@ const ProductDetail = () => {
         <main>
           {/* product purrchase section */}
           <section className="flex flex-col gap-9 sm:gap-16 sm:flex-row sm:items-center">
-            <picture className="w-full sm:w-1/2">
+            <motion.picture
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.9, ease: easeOut }}
+              className="w-full sm:w-1/2"
+            >
               <source
                 media="(min-width:1024px)"
                 srcSet={individualProduct.image.desktop}
@@ -66,9 +72,14 @@ const ProductDetail = () => {
                 width={1000}
                 className=" sm:pb-0 object-cover rounded-md"
               />
-            </picture>
+            </motion.picture>
 
-            <div className="sm:w-1/2">
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.9, ease: easeOut }}
+              className="sm:w-1/2"
+            >
               {individualProduct.new && (
                 <p className="subtitle-overline text-primary-500">
                   NEW PRODUCT
@@ -92,21 +103,33 @@ const ProductDetail = () => {
                   label="Add to cart"
                 />
               </div>
-            </div>
+            </motion.div>
           </section>
 
-          {/* clubeed features and in th box section for large screen */}
+          {/* clubbed features and in th box section for large screen */}
 
           <div className="lg:flex items-start gap-32 lg:pt-40">
-            <section className="py-22 lg:py-0 sm:py-28 lg:w-2/3">
+            <motion.section
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.9, ease: easeOut }}
+              className="py-22 lg:py-0 sm:py-28 lg:w-2/3"
+            >
               <h2 className="h4-bold sm:h3-bold pb-9">Features</h2>
               <div className="body text-dark-100/50">
                 {individualProduct.features}
               </div>
-            </section>
+            </motion.section>
 
             {/* in the box section */}
-            <section className="sm:flex lg:flex-col gap-40 lg:gap-4 items-start lg:w-1/3">
+            <motion.section
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.9, ease: easeOut }}
+              className="sm:flex lg:flex-col gap-40 lg:gap-4 items-start lg:w-1/3"
+            >
               <h2 className="h4-bold">in the box</h2>
               <ul className="pt-9 sm:pt-0 flex flex-col gap-4">
                 {individualProduct.includes.map((include) => (
@@ -116,12 +139,18 @@ const ProductDetail = () => {
                   </li>
                 ))}
               </ul>
-            </section>
+            </motion.section>
           </div>
           {/* product features section */}
 
           {/* gallery section*/}
-          <section className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-22 lg:pt-40 sm:pt-28">
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.9, ease: easeOut }}
+            className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-22 lg:pt-40 sm:pt-28"
+          >
             {/* first image */}
             <picture>
               <source
@@ -176,10 +205,16 @@ const ProductDetail = () => {
                 className="w-full sm:h-full object-cover rounded-md"
               />
             </picture>
-          </section>
+          </motion.section>
 
           {/* other product section */}
-          <section className="py-22 sm:py-28 lg:py-40 text-center">
+          <motion.section
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.9, ease: easeOut }}
+            className="py-22 sm:py-28 lg:py-40 text-center"
+          >
             <h2 className="h4-bold sm:h3-bold pb-12">you may also like</h2>
             <ul className="sm:flex items-center gap-3">
               {individualProduct.others.map((product) => {
@@ -218,7 +253,7 @@ const ProductDetail = () => {
                 );
               })}
             </ul>
-          </section>
+          </motion.section>
 
           {/* categories section */}
           <section className="text-center">

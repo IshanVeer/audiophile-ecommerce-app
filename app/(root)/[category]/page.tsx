@@ -5,6 +5,7 @@ import React from "react";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
 import Categories from "@/components/shared/Categories";
+import { easeOut, motion } from "motion/react";
 
 const CategoryPage = () => {
   const { category } = useParams();
@@ -25,30 +26,37 @@ const CategoryPage = () => {
               key={product.id}
               className="pb-30 lg:pb-40 lg:flex items-center gap-32 lg:even:flex-row-reverse"
             >
-              <Image
-                src={product.categoryImage.mobile}
-                alt={product.name}
-                height={1000}
-                width={1000}
-                className="rounded-md sm:hidden object-cover"
-              />
-              <Image
-                src={product.categoryImage.tablet}
-                alt={product.name}
-                height={1000}
-                width={1000}
-                className="rounded-md max-sm:hidden lg:hidden object-cover"
-              />
-              <Image
-                src={product.categoryImage.desktop}
-                alt={product.name}
-                height={1000}
-                width={1000}
-                className="rounded-md max-lg:hidden object-cover lg:w-1/2"
-              />
+              <motion.picture
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 1, ease: easeOut }}
+              >
+                <source
+                  media="(min-width:1024px)"
+                  srcSet={product.categoryImage.desktop}
+                />
+                <source
+                  media="(min-width:640px)"
+                  srcSet={product.categoryImage.tablet}
+                />
+                <Image
+                  src={product.categoryImage.mobile}
+                  alt={product.name}
+                  height={1000}
+                  width={1000}
+                  className="rounded-md  object-cover"
+                />
+              </motion.picture>
 
               {/* text container */}
-              <div className="text-center py-8 sm:max-w-[572px] sm:mx-auto lg:text-start">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 1, ease: easeOut }}
+                className="text-center py-8 sm:max-w-[572px] sm:mx-auto lg:text-start"
+              >
                 {product.new && (
                   <p className="subtitle-overline text-primary-500">
                     New Product
@@ -65,7 +73,7 @@ const CategoryPage = () => {
                   isLink
                   route={`/${category}/${product.slug}`}
                 />
-              </div>
+              </motion.div>
             </li>
           ))}
         </ul>
