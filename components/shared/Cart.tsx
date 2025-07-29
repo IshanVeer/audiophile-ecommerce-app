@@ -13,7 +13,7 @@ import { shortenName } from "@/lib/utils";
 import EmptyCart from "./EmptyCart";
 
 const Cart = () => {
-  const { cart, increaseCartItem, decreaseCartItem, removeAllItems } =
+  const { cart, increaseCartItem, decreaseCartItem, clearCart } =
     useCartContext();
 
   const totalPrice = cart.reduce(
@@ -42,7 +42,7 @@ const Cart = () => {
             <div className="flex justify-between">
               <h5 className="h6-bold">Cart ({cart.length}) </h5>
               <button
-                onClick={removeAllItems}
+                onClick={clearCart}
                 className="text-dark-100/50 body border-b cursor-pointer hover:text-dark-100/55 transition duration-150"
               >
                 Remove All

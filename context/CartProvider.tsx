@@ -7,7 +7,7 @@ interface CartContextType {
   addToCart: (incomingItem: CartItemProps) => void;
   increaseCartItem: (id: string) => void;
   decreaseCartItem: (id: string) => void;
-  removeAllItems: () => void;
+  clearCart: () => void;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -18,6 +18,7 @@ const CartProvider = ({ children }: { children: React.ReactNode }) => {
     try {
       if (typeof window !== "undefined") {
         const savedCart = localStorage.getItem("cart");
+        console.log(savedCart, "saved cart");
         return savedCart ? JSON.parse(savedCart) : [];
       }
     } catch (error) {
@@ -80,14 +81,14 @@ const CartProvider = ({ children }: { children: React.ReactNode }) => {
 
   // remove all cart items
 
-  const removeAllItems = () => {
+  const clearCart = () => {
     setCart([]);
   };
 
   const value = {
     cart,
     addToCart,
-    removeAllItems,
+    clearCart,
     increaseCartItem,
     decreaseCartItem,
   };

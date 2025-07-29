@@ -9,6 +9,7 @@ interface ButtonProps {
   className?: string;
   action?: string;
   addToCartHandler?: () => void;
+  handleBackToHome?: () => void;
   typeButton?: "button" | "submit" | "reset";
 }
 
@@ -21,6 +22,7 @@ const Button = ({
   route,
   action,
   addToCartHandler,
+  handleBackToHome,
 }: ButtonProps) => {
   const buttonClass = `uppercase text-[13px] inline-block text-center font-bold leading-[18px] cursor-pointer px-9 py-3.5 transition duration-150  ${
     buttonStyle === "secondary" ? "button-secondary" : "button-primary"
@@ -30,6 +32,8 @@ const Button = ({
     switch (action) {
       case "add-to-cart":
         addToCartHandler?.();
+      case "checkout":
+        handleBackToHome?.();
     }
   };
 

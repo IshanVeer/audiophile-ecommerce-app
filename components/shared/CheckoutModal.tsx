@@ -5,10 +5,13 @@ import Image from "next/image";
 import { useCartContext } from "@/context/CartProvider";
 import { shortenName } from "@/lib/utils";
 import Button from "../ui/Button";
+import { useRouter } from "next/navigation";
 
 const CheckoutModal = () => {
   const modalRoot = document.getElementById("modal-root");
-  const { cart } = useCartContext();
+  const { cart, clearCart } = useCartContext();
+
+  const router = useRouter();
   const totalPrice = cart.reduce(
     (acc, item) => acc + item.price * item.quantity,
     0
@@ -29,6 +32,11 @@ const CheckoutModal = () => {
     console.log("Modal root element not found");
     return null;
   }
+  const handleBackToHome = () => {
+    clearCart();
+    console.log("cart cleared");
+    router.push("/");
+  };
   return createPortal(
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
       <div className="bg-light-100 text-dark-100 w-[327px] rounded-md p-8">
@@ -87,7 +95,12 @@ const CheckoutModal = () => {
             <p className="text-light-100 h6-bold pt-4">{`$${grandTotal}`}</p>
           </div>
         </div>
-        <Button className="w-full mt-6" label="BACK TO HOME" isLink route="/" />
+        <Button
+          handleBackToHome={handleBackToHome}
+          action="checkout"
+          className="w-full mt-6"
+          label="BACK TO HOME"
+        />
       </div>
     </div>,
     modalRoot
