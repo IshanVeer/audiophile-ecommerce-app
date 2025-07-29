@@ -21,7 +21,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={` ${manrope.variable} antialiased`}>
-        <CartProvider>{children}</CartProvider>
+        <CartProvider>
+          {children}
+
+          <div id="modal-root"></div>
+        </CartProvider>
       </body>
     </html>
   );
