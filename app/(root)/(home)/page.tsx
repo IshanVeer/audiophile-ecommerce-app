@@ -1,8 +1,10 @@
+"use client";
 import Categories from "@/components/shared/Categories";
 import Button from "@/components/ui/Button";
 
 import Image from "next/image";
 import Link from "next/link";
+import { easeOut, motion } from "motion/react";
 
 export default function Home() {
   return (
@@ -11,7 +13,12 @@ export default function Home() {
       <section className="flex lg:justify-between lg:h-[650px] items-center py-30 sm:pt-36 sm:pb-54 lg:py-0 lg:px-40 bg-[url(/assets/home/mobile/image-header.jpg)] sm:bg-[url(/assets/home/tablet/image-header.jpg)] lg:bg-none lg:bg-dark-100 bg-no-repeat bg-center bg-cover">
         {/* text container */}
 
-        <div className="max-w-[328px] sm:max-w-[400px] lg:py-30 mx-auto lg:mx-0 text-center lg:text-start">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, ease: easeOut }}
+          className="max-w-[328px] sm:max-w-[400px] lg:py-30 mx-auto lg:mx-0 text-center lg:text-start"
+        >
           <p className="subtitle-overline text-light-100/50 pb-4 sm:pb-6">
             NEW PRODUCT
           </p>
@@ -27,9 +34,14 @@ export default function Home() {
             isLink
             route="/headphones/xx99-mark-two-headphones"
           />
-        </div>
+        </motion.div>
         {/* image */}
-        <div className="w-1/2 h-full max-lg:hidden">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, ease: easeOut }}
+          className="w-1/2 h-full max-lg:hidden"
+        >
           <Image
             className="h-full object-cover"
             src="/assets/home/desktop/image-hero.jpg"
@@ -37,7 +49,7 @@ export default function Home() {
             height={1000}
             width={1000}
           />
-        </div>
+        </motion.div>
       </section>
 
       {/* category section */}
@@ -48,7 +60,13 @@ export default function Home() {
       {/* product section */}
       <section className="px-6 sm:px-10 lg:px-40">
         {/* product 1 */}
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 mb-6  items-center  relative overflow-hidden  bg-primary-500 py-20 lg:px-8 rounded-md">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.9, ease: easeOut }}
+          className="flex flex-col lg:flex-row gap-12 lg:gap-20 mb-6  items-center  relative overflow-hidden  bg-primary-500 py-20 lg:px-8 rounded-md"
+        >
           <div>
             <Image
               src="/assets/home/desktop/pattern-circles.svg"
@@ -85,9 +103,15 @@ export default function Home() {
               See product
             </Link>
           </div>
-        </div>
+        </motion.div>
         {/* product 2 */}
-        <div className="py-28 px-6 lg:px-20 mb-6 bg-[url(/assets/home/mobile/image-speaker-zx7.jpg)] sm:bg-[url(/assets/home/tablet/image-speaker-zx7.jpg)] lg:bg-[url(/assets/home/desktop/image-speaker-zx7.jpg)] bg-no-repeat bg-center bg-cover rounded-md">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.9, ease: easeOut }}
+          className="py-28 px-6 lg:px-20 mb-6 bg-[url(/assets/home/mobile/image-speaker-zx7.jpg)] sm:bg-[url(/assets/home/tablet/image-speaker-zx7.jpg)] lg:bg-[url(/assets/home/desktop/image-speaker-zx7.jpg)] bg-no-repeat bg-center bg-cover rounded-md"
+        >
           <div>
             <h4 className="h4-bold mb-8">ZX7 SPEAKER</h4>
             <Button
@@ -97,10 +121,16 @@ export default function Home() {
               buttonStyle="secondary"
             />
           </div>
-        </div>
+        </motion.div>
 
         {/* product 3 */}
-        <div className="flex flex-col sm:flex-row gap-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.9, ease: easeOut }}
+          className="flex flex-col sm:flex-row gap-6"
+        >
           <Image
             src="/assets/home/desktop/image-earphones-yx1.jpg"
             alt="earphones-yx1"
@@ -133,7 +163,7 @@ export default function Home() {
               />
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
     </>
   );

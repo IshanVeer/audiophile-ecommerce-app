@@ -2,12 +2,19 @@ import { categoryData } from "@/constants";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { easeOut, motion } from "motion/react";
 
 const Categories = () => {
   return (
     <>
       {" "}
-      <ul className="flex flex-col sm:flex-row gap-12 sm:gap-4 lg:gap-8">
+      <motion.ul
+        initial={{ opacity: 0, x: -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.9, ease: easeOut }}
+        className="flex flex-col sm:flex-row gap-12 sm:gap-4 lg:gap-8"
+      >
         {categoryData.map((category) => (
           <li
             className="bg-light-400 pt-23 pb-6 rounded-md relative w-full "
@@ -39,7 +46,7 @@ const Categories = () => {
             </div>
           </li>
         ))}
-      </ul>
+      </motion.ul>
     </>
   );
 };

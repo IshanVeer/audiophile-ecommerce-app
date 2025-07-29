@@ -1,9 +1,17 @@
+"use client";
 import Image from "next/image";
 import React from "react";
+import { easeOut, motion } from "motion/react";
 
 const BrandDescription = () => {
   return (
-    <div className="section-container py-30 lg:py-40 lg:flex items-center gap-30">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.9, ease: easeOut }}
+      className="section-container py-30 lg:py-40 lg:flex items-center gap-30"
+    >
       <Image
         src="/assets/shared/mobile/image-best-gear.jpg"
         alt="best-gear"
@@ -39,7 +47,7 @@ const BrandDescription = () => {
           best place to buy your portable audio equipment.
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
