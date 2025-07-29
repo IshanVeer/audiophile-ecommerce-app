@@ -522,6 +522,22 @@ const CheckoutPage = () => {
                 </div>
               </div>
             )}
+            {formData.paymentMethod === "cash-on-delivery" && (
+              <div className="flex items-center pb-7 gap-4 sm:gap-8">
+                <Image
+                  src="/assets/checkout/icon-cash-on-delivery.svg"
+                  alt="cash-on-delivery"
+                  height={50}
+                  width={50}
+                />
+                <p className="body text-dark-100/50">
+                  The ‘Cash on Delivery’ option enables you to pay in cash when
+                  our delivery courier arrives at your residence. Just make sure
+                  your address is correct so that your order will not be
+                  cancelled.
+                </p>
+              </div>
+            )}
           </div>
 
           {/* Summary container */}
