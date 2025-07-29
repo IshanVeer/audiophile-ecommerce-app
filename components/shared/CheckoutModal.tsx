@@ -1,17 +1,26 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
 import { useCartContext } from "@/context/CartProvider";
 import { shortenName } from "@/lib/utils";
 import Button from "../ui/Button";
 import { useRouter } from "next/navigation";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 
 const CheckoutModal = () => {
   const modalRoot = document.getElementById("modal-root");
   const { cart, clearCart } = useCartContext();
+  const [isOpen, setIsOpen] = useState(false);
 
   const router = useRouter();
+
+  const cartFirstItem = cart[0];
+  console.log(cartFirstItem, "cart first Item");
   const totalPrice = cart.reduce(
     (acc, item) => acc + item.price * item.quantity,
     0
@@ -37,6 +46,10 @@ const CheckoutModal = () => {
     console.log("cart cleared");
     router.push("/");
   };
+  if (!cart || cart.length === 0) {
+    console.log("Cart is empty");
+    return null;
+  }
   return createPortal(
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
       <div className="bg-light-100 text-dark-100 w-[327px] sm:w-[540px] rounded-md p-8 sm:p-12">
@@ -53,44 +66,82 @@ const CheckoutModal = () => {
         </p>
         <div className="bg-light-300 rounded-md overflow-hidden sm:flex">
           {/* cart items */}
-          <div className="py-6 sm:w-3/5">
-            <ul className="border-b border-dark-100/8 mx-6 pb-4">
-              {cart.map((item) => (
-                <li
-                  key={item.id}
-                  className="flex justify-between items-center gap-4"
-                >
-                  <div className="flex w-2/3 items-center gap-4">
-                    <Image
-                      src={item.image.desktop}
-                      alt={item.name}
-                      width={100}
-                      height={100}
-                      className="w-1/3 rounded-md"
-                    />
+          <div className="py-6 sm:w-[60%]">
+            <Collapsible
+              open={isOpen}
+              onOpenChange={setIsOpen}
+              className=" mx-6 pb-4"
+            >
+              <div className="flex justify-between items-center gap-4">
+                <div className="flex items-center gap-4">
+                  <Image
+                    src={cartFirstItem.image.desktop}
+                    alt={cartFirstItem.name}
+                    width={100}
+                    height={100}
+                    className="w-1/3 rounded-md"
+                  />
 
-                    <div className="w-1/2">
-                      <p className="font-bold text-[15px] uppercase">
-                        {shortenName(item.name)}
-                      </p>
-                      <p className="text-dark-100/50 text-[14px] font-bold">
-                        {`$${item.price}`}
-                      </p>
-                    </div>
+                  <div className="w-1/2">
+                    <p className="font-bold text-[15px] uppercase">
+                      {shortenName(cartFirstItem.name)}
+                    </p>
+                    <p className="text-dark-100/50 text-[14px] font-bold">
+                      {`$${cartFirstItem.price}`}
+                    </p>
                   </div>
+                </div>
 
-                  <div className="flex items-center text-[15px] font-bold text-dark-100/50">
-                    <p>x</p>
-                    <p>{item.quantity}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
+                <div className="flex items-center text-[15px] font-bold text-dark-100/50">
+                  <p>x</p>
+                  <p>{cartFirstItem.quantity}</p>
+                </div>
+              </div>
+              <CollapsibleContent>
+                <ul>
+                  {cart.slice(1).map((item) => (
+                    <li
+                      key={item.id}
+                      className="flex justify-between items-center gap-4"
+                    >
+                      <div className="flex items-center gap-4">
+                        <Image
+                          src={item.image.desktop}
+                          alt={item.name}
+                          width={100}
+                          height={100}
+                          className="w-1/3 rounded-md"
+                        />
 
-            <p className="text-center pt-4 text-xs font-bold text-dark-100/50">{`and ${cart.length} other item(s)`}</p>
+                        <div className="w-1/2">
+                          <p className="font-bold text-[15px] uppercase">
+                            {shortenName(item.name)}
+                          </p>
+                          <p className="text-dark-100/50 text-[14px] font-bold">
+                            {`$${item.price}`}
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center text-[15px] font-bold text-dark-100/50">
+                        <p>x</p>
+                        <p>{item.quantity}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </CollapsibleContent>
+              <div className="text-center border-t mt-4 border-dark-100/8">
+                <CollapsibleTrigger className="pt-4 text-xs font-bold text-dark-100/50">
+                  {isOpen
+                    ? "View less"
+                    : `and ${cart.length - 1} other item(s)`}
+                </CollapsibleTrigger>
+              </div>
+            </Collapsible>
           </div>
           {/* grand total */}
-          <div className="bg-dark-100 px-6 py-5 sm:w-2/5 sm:flex flex-col justify-end">
+          <div className="bg-dark-100 px-6 py-5 sm:w-[40%] sm:flex flex-col justify-end">
             <p className="uppercase body text-light-100/50">Grand Total</p>
             <p className="text-light-100 h6-bold pt-4">{`$${grandTotal}`}</p>
           </div>
